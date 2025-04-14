@@ -20,15 +20,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             } else if (input.type === "checkbox") {
                 if (!input.checked) {
-                    isValid = false;
                     input.style.border = "2px solid red";
+                    isValid = false;
                 } else {
                     input.style.border = "1px solid #d9d9d9";
                 }
             } else {
                 if (input.value.trim() === "") {
-                    isValid = false;
                     input.style.border = "2px solid red";
+                    isValid = false;
                 } else {
                     input.style.border = "1px solid #ccc";
                 }
@@ -37,12 +37,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
         return isValid;
     }
+    document.querySelectorAll("form").forEach(form => {
+        form.addEventListener("submit", function (e) {
+            if (!validateForm(form)) {
+                e.preventDefault(); // prevent form submission if not valid
+            }
+        });
+    });
+
 
     function handleInputValidation(event) {
         const input = event.target;
-        const onlyLetters = ["form-tb-text", "form-tb-middleName", "modal-tb-text", "modal-tb-middleName"];
-        const lettersAndNumbers = ["form-tb-text-number, modal-tb-text-number"];
-        const onlyNumbers = ["form-tb-number", "form-tb-contNumber", "modal-tb-contNumber"];
+        const onlyLetters = ["form-tb-text", "form-tb-middleName"];
+        const lettersAndNumbers = ["form-tb-text-number"];
+        const onlyNumbers = ["form-tb-number", "form-tb-contNumber"];
 
         if (onlyLetters.includes(input.classList[0])) {
             input.value = input.value.replace(/[^a-zA-Z ]/g, '');
@@ -74,13 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-
-    document.querySelector(".modal-btn-submit")?.addEventListener("click", function (event) {
-        const form = document.querySelector(".modal-form");
-        if (form && !validateForm(form)) {
-            event.preventDefault();
-        }
-    });
 
     // File List with Thumbnails
     const fileInput = document.querySelector(".form-tb-file");
@@ -308,7 +309,24 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    
+    // Add listener to every form
+    document.querySelectorAll("form").forEach(form => {
+        form.addEventListener("submit", function (e) {
+            // Call your custom validation (optional, if exists)
+            const phoneValid = typeof validatePhone === 'function' ? validatePhone() : true;
+
+            // Call main validation
+            const formValid = validateForm(form);
+
+            // If either fails, prevent submission
+            if (!formValid || !phoneValid) {
+                e.preventDefault();
+            }
+        });
+    });
+
+
+
 
 });
 document.addEventListener("DOMContentLoaded", function () {
@@ -374,10 +392,10 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".form-tb-text-char").forEach((inputField) => {
         inputField.addEventListener("input", function () {
             let errorMsg = this.nextElementSibling; // Assuming the error message is placed right after the input field
-    
+
             // Regular expression to allow only special characters (removes letters and numbers)
             let regex = /^[^A-Za-z0-9]+$/;
-    
+
             if (!regex.test(this.value)) {
                 if (errorMsg && errorMsg.classList.contains("error")) {
                     errorMsg.textContent = "Only special characters are allowed!";
@@ -394,10 +412,10 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".form-tb-text-Capitalize, .form-tb-text-uppercase, .form-tb-text-lowerC").forEach((inputField) => {
         inputField.addEventListener("input", function () {
             let errorMsg = this.nextElementSibling; // Assuming the error message is placed right after the input field
-    
+
             // Regular expression to allow only letters (A-Z, a-z) and spaces
             let regex = /^[A-Za-z\s]+$/;
-    
+
             if (!regex.test(this.value)) {
                 if (errorMsg && errorMsg.classList.contains("error")) {
                     errorMsg.textContent = "Only alphabetic characters are allowed!";

@@ -61,4 +61,60 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         });
       });
+
+      document.querySelectorAll('.dropdown').forEach(dropdown => {
+          const searchInput = dropdown.querySelector('.dropdown-search');
+          const items = dropdown.querySelectorAll('.dropdown-item');
+          const displayText = dropdown.querySelector('.dropdown-select p');
+          const dropdownSelect = dropdown.querySelector('.dropdown-select');
+          const dropdownContent = dropdown.querySelector('.dropdown-content');
+  
+          // Toggle dropdown open/close
+          dropdownSelect.addEventListener('click', function () {
+              const isOpen = dropdownContent.style.display === 'block';
+              document.querySelectorAll('.dropdown-content').forEach(dc => {
+                  dc.style.display = 'none';
+              });
+              dropdownContent.style.display = isOpen ? 'none' : 'block';
+  
+              if (!isOpen) {
+                  // Clear search input and show all items
+                  if (searchInput) searchInput.value = '';
+                  items.forEach(item => item.style.display = '');
+              }
+          });
+  
+          // Search filter
+          if (searchInput) {
+              searchInput.addEventListener('keyup', function () {
+                  const filter = this.value.toLowerCase();
+                  items.forEach(item => {
+                      const text = item.textContent.toLowerCase();
+                      item.style.display = text.includes(filter) ? '' : 'none';
+                  });
+              });
+          }
+  
+          items.forEach(item => {
+              item.addEventListener('click', function () {
+                  displayText.textContent = this.textContent;
+                  dropdownContent.style.display = 'none';
+  
+                  if (searchInput) searchInput.value = '';
+                  items.forEach(i => i.style.display = '');
+              });
+          });
+      });
+  
+      window.addEventListener('click', function (e) {
+          if (!e.target.closest('.dropdown')) {
+              document.querySelectorAll('.dropdown-content').forEach(dc => {
+                  dc.style.display = 'none';
+              });
+          }
+      });
+
 });
+
+
+
