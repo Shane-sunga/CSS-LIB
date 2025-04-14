@@ -1,0 +1,104 @@
+/* Container Style */
+.container {
+  margin: 5px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+
+}
+
+.medium-container {
+  margin-top: 30px;
+  border: #555 1px solid;
+  padding: 20px;
+  display: absolute;
+}
+
+.comp-logs-container {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  font-weight: 600;
+}
+
+.code-style {
+  background: #000000;
+  color: #bebebe;
+  padding: 10px;
+  border-radius: 5px;
+  width: 90%;
+  max-height: 500px;
+  overflow: auto;
+  word-wrap: break-word;
+  position: relative;
+  border: #6ca0d1 1px dashed;
+
+}
+
+.copy-btn-cont {
+  position: sticky;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  z-index: 10;
+  background: rgba(82, 113, 144, 0.4);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(219, 219, 219, 0.25);
+  color: #ffffff;
+  border: 2px solid #1b313e;
+  border-radius: 6px;
+  padding: 5px;
+  text-align: center;
+  width: 110px;
+  cursor: pointer;
+  transition: background 0.4s ease-in-out;
+}
+
+.copy-btn-cont:hover {
+  background-color: #14252f;
+  border: 1px solid rgba(169, 169, 169, 0.25);
+  color: white;
+
+}
+
+.style-exp {
+  background-color: white;
+  border: #b6b4b4 1px dashed;
+  border-radius: 10px;
+  width: 90%;
+  padding: 10px;
+}
+
+.slide-up {
+  animation: slideUp 0.2s forwards;
+}
+
+.slide-down {
+  animation: slideDown 0.2s forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

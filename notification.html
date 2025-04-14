@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure CSS Notification Dropdown</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+
+        /* Notification Bell */
+        .notif-container {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            font-size: 22px;
+            padding: 12px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Notification Badge */
+        .notif-badge {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: red;
+            color: white;
+            font-size: 12px;
+            width: 18px;
+            height: 18px;
+            text-align: center;
+            border-radius: 50%;
+            line-height: 18px;
+            font-weight: bold;
+        }
+
+        /* Notification Dropdown */
+        .notif-dropdown {
+            position: absolute;
+            width: 320px;
+            background: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .notif-dropdown.show {
+            display: block;
+        }
+
+        /* Dropdown Header */
+        .notif-header {
+            padding: 12px;
+            font-weight: bold;
+            background: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        /* Notification Item */
+        .notif-item {
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .notif-item:last-child {
+            border-bottom: none;
+        }
+
+        .notif-item:hover {
+            background: #f2f2f2;
+        }
+
+        .notif-icon {
+            font-size: 20px;
+            margin-right: 10px;
+            color: #007bff;
+        }
+
+        /* Mark All as Read Button */
+        .notif-footer {
+            padding: 10px;
+            text-align: center;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 0 0 10px 10px;
+            font-weight: bold;
+        }
+
+        .notif-footer:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Notification Bell -->
+    <div class="notif-container" onclick="toggleNotifications()" id="notif-icon">
+        <i class="bi bi-bell"></i>
+        <span class="notif-badge" id="notif-count">3</span>
+    </div>
+
+    <!-- Notification Dropdown -->
+    <div class="notif-dropdown" id="notif-dropdown">
+        <div class="notif-header">Notifications</div>
+
+        <div class="notif-item">
+            <i class="bi bi-chat-left-text notif-icon"></i>
+            <span>New message received</span>
+        </div>
+        <div class="notif-item">
+            <i class="bi bi-person-plus notif-icon"></i>
+            <span>New friend request</span>
+        </div>
+        <div class="notif-item">
+            <i class="bi bi-hand-thumbs-up notif-icon"></i>
+            <span>Someone liked your post</span>
+        </div>
+
+        <div class="notif-footer" onclick="markAllRead()">Mark All as Read</div>
+    </div>
+
+    <script>
+        function toggleNotifications() {
+            let dropdown = document.getElementById("notif-dropdown");
+            let icon = document.getElementById("notif-icon");
+
+            if (dropdown.classList.contains("show")) {
+                dropdown.classList.remove("show");
+            } else {
+                let rect = icon.getBoundingClientRect();
+                dropdown.style.top = `${rect.bottom + window.scrollY + 10}px`;
+                dropdown.style.left = `${rect.left + window.scrollX - dropdown.offsetWidth / 2 + icon.offsetWidth / 2}px`;
+                dropdown.classList.add("show");
+            }
+        }
+
+        function markAllRead() {
+            document.getElementById("notif-count").style.display = "none";
+            document.getElementById("notif-dropdown").classList.remove("show");
+        }
+
+        // Close dropdown when clicking outside
+        window.onclick = function(event) {
+            if (!event.target.closest(".notif-container") && !event.target.closest(".notif-dropdown")) {
+                document.getElementById("notif-dropdown").classList.remove("show");
+            }
+        };
+
+        // Adjust position on window resize
+        window.onresize = function() {
+            let dropdown = document.getElementById("notif-dropdown");
+            if (dropdown.classList.contains("show")) {
+                toggleNotifications();
+                toggleNotifications();
+            }
+        };
+    </script>
+
+</body>
+</html>

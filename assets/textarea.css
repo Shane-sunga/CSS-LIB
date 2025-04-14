@@ -1,0 +1,106 @@
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    background: #f3f3f3;
+    border: 1px solid #AFAFAF;
+    border-bottom: none;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 5px;
+    position: relative;
+}
+
+.textColorIcon {
+    border: 2px solid black;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.highlightIcon {
+    border: 2px solid black;
+    padding: 0 2px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.toolbar select,
+.toolbar button {
+    border: none;
+    background: #f9f9f9;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: 0.2s;
+    position: relative;
+}
+
+.toolbar select:hover,
+.toolbar button:hover {
+    background: #ddd;
+}
+
+.editor {
+    min-height: 150px;
+    max-height: 350px;
+    border: 1px solid #AFAFAF;
+    padding: 15px 40px;
+    background: #fff;
+    outline: none;
+    box-sizing: border-box;
+    border-top: none;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    resize: none;
+    overflow-y: auto;
+}
+
+.editor ul {
+    list-style-type: disc !important;
+    /* Ensures bullets appear */
+    padding-left: 10px;
+    /* Adds indentation */
+    margin-left: 20px;
+}
+
+.editor ol {
+    list-style-type: decimal !important;
+    /* Ensures numbering appears */
+    padding-left: 20px;
+    margin-left: 20px;
+}
+
+.editor li {
+    margin-bottom: 5px;
+    /* Adds spacing between list items */
+}
+
+
+
+.editor:empty:before {
+    content: "Start typing...";
+    color: gray;
+    font-style: italic;
+}
+
+/* Floating color picker */
+.color-picker-container {
+    position: absolute;
+    display: none;
+    background: #fff;
+    border: 1px solid #AFAFAF;
+    border-radius: 5px;
+    padding: 5px;
+    z-index: 10;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.color-picker-container input {
+    border: none;
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
+}

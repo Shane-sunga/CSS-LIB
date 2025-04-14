@@ -1,0 +1,61 @@
+.input-fl-cont {
+    position: relative;
+    margin: 20px;
+}
+
+.floating-label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #999;
+    transition: 0.3s ease-in-out;
+    pointer-events: none;
+    background: white;
+    border-radius: 80px;
+    padding: 0 5px;
+    font-family: "Poppins";
+}
+
+.form-tb-fl {
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 16px;
+    border: 2px solid #6CA0D1;
+    border-radius: 14px;
+    outline: none;
+
+}
+
+.form-tb-fl:focus+.floating-label,
+.form-tb-fl:not(:placeholder-shown)+.floating-label {
+    top: 0;
+    font-size: 12px;
+    color: #1D3C5E;
+    font-family: "Poppins";
+}
+
+
+.code-html {
+    color: rgb(86 156 214);
+    ;
+}
+
+.code-attr {
+    color: rgb(115, 204, 252);
+    ;
+}
+
+.code-value {
+    color: rgb(207 146 120);
+}
+
+.code-text {
+    color: #f8f8f2;
+
+}
+
+.code-style code span {
+    font-family: "Courier New", monospace;
+}

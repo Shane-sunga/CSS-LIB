@@ -1,0 +1,122 @@
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.skeleton {
+    background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+    border-radius: 14px;
+}
+
+/* Navbar Skeleton */
+.skeleton-navbar {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+/* Search Bar Skeleton */
+.skeleton-search {
+    width: 48%;
+    height: 35px;
+    margin-bottom: 20px;
+}
+
+/* Sidebar Skeleton */
+.skeleton-sidebar {
+    width: 200px;
+    height: 400px;
+}
+
+/* Card Skeleton */
+.skeleton-card,.skeleton-card-small,.skeleton-card-large {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.skeleton-card-xs {
+    height: 250px;
+    width: 28%;
+    margin-bottom: 20px;
+    min-width: 125px;
+}
+
+/* Large Card */
+.skeleton-card-large {
+    height: 250px;
+}
+
+/* Small Card */
+.skeleton-card-small {
+    height: 100px;
+}
+
+/* Table Skeleton */
+.skeleton-table {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+/* Button Skeleton */
+.skeleton-btn {
+    width: 120px;
+    height: 40px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.skeleton-btn-circle{
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Flexbox Layout */
+.sk-container {
+    max-width: 1500px;
+    margin: auto;
+    padding: 20px;
+}
+
+.sk-row {
+    display: flex;
+    gap: 20px;
+}
+
+.sk-sidebar {
+    flex: 1;
+}
+
+.sk-content {
+    flex: 3;
+}
+
+.sk-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+@media (max-width:480px){
+    .skeleton-sidebar{
+        width: 120px;
+        height: 200px;
+    }
+    .skeleton-card-xs{
+        width: 155px;
+        height: 90px;
+    }
+}
+
+@media (max-width:330px){
+  
+    .skeleton-card-xs{
+        width: 120px;
+        height: 90px;
+    }
+}

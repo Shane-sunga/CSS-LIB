@@ -1,0 +1,175 @@
+.table-cont {
+    width: 100%;
+    overflow-x: auto;
+    padding: 10px 10px;
+    /* Enables horizontal scrolling */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    font-family: "Poppins";
+}
+
+.table-simple th,
+.table-dark th,
+.table-light th,
+.table-striped th,
+.table-bordered th,
+.table-hover th,
+.table-glass th,
+.table-borderless th {
+    background: #1D3C5E;
+    color: white;
+    padding: 12px;
+}
+
+.table-simple td,
+.table-dark td,
+.table-light td,
+.table-striped td,
+.table-bordered td,
+.table-hover td,
+.table-glass td,
+.table-borderless td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.table-simple thead th:first-child,
+.table-dark thead th:first-child,
+.table-light thead th:first-child,
+.table-striped thead th:first-child,
+.table-hover thead th:first-child,
+.table-glass thead th:first-child,
+.table-borderless thead th:first-child {
+    border-top-left-radius: 14px;
+}
+
+.table-simple thead th:last-child,
+.table-dark thead th:last-child,
+.table-light thead th:last-child,
+.table-striped thead th:last-child,
+.table-hover thead th:last-child,
+.table-glass thead th:last-child,
+.table-borderless thead th:last-child {
+    border-top-right-radius: 14px;
+}
+
+.table-borderless {
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+}
+
+.table-borderless td {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+}
+
+
+.table-simple {
+    background: white;
+    color: black;
+}
+
+.table-dark {
+    background: #141414;
+    border-radius: 14px;
+    color: white;
+}
+
+.table-dark th {
+    background: #555;
+}
+
+.table-light {
+    background: #f9f9f9;
+    color: black;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+    background: #b3b3b3;
+}
+
+.table-bordered {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.table-bordered th {
+    border: 0.05px solid #1D3C5E;
+    background: #1D3C5E;
+    color: white;
+}
+
+.table-bordered thead th:first-child {
+    border-top-left-radius: 14px;
+}
+
+.table-bordered thead th:last-child {
+    border-top-right-radius: 14px;
+}
+
+.table-bordered th {
+    border: .05px solid #1D3C5E;
+}
+
+.table-bordered td {
+    border: .05px solid rgb(27, 27, 27);
+}
+
+.table-hover tbody tr:hover {
+    background: #b3b3b3;
+}
+
+.table-glass {
+    background: rgba(29, 60, 94, 0.4);
+    backdrop-filter: blur(13px);
+    border: 1px solid rgba(29, 60, 94, 0.2);
+    border-radius: 14px;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+
+    .table-cont {
+        overflow-x: auto;
+    }
+
+
+    th,
+    td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .table-cont {
+        overflow-x: auto;
+    }
+
+    th,
+    td {
+        padding: 6px;
+        font-size: 12px;
+    }
+}
+
+.image {
+    background-image: url(../dmw.png);
+    border-radius: 14px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75% 70%;
+}
