@@ -1,152 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Custom Dropdown with Input</title>
-  <link rel="stylesheet" href="assets/styles.css"/>
+  <meta charset="UTF-8">
+  <title>Simple Pagination</title>
+  <link rel="stylesheet" href="assets/styles.css">
   <style>
-  .dropdown-options-other {
-    display: none;
-    margin: 0 5px 0 5px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #AFAFAF;
-    border-radius: 14px;
-    box-sizing: border-box;
-    outline-color: #66a3c9;
-    background-color: white;
-    align-content: center;
-    min-height: 50px;
-  }
-
-  .dropdown-options-other div {
-    padding: 10px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .form-dropdown-input {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #AFAFAF;
-    border-radius: 4px;
-    box-sizing: border-box;
-    outline-color: white;
-
-  }
-  .dropdown-options-other div:hover {
-    background-color: #f0f0f0;
-  }
-
-  .dropdown-options-other input[type="text"] {
-    flex: 1;
-    padding: 5px;
-    display: none;
-  }
-
-  .dropdown-options-other .other-option.selected input[type="text"] {
-    display: inline-block;
-  }
-  /* Add in css .form-dropdown-other, .dropdown-options-other in Input Styles */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      text-align: center;
+    }
+    .pagination {
+      display: flex;
+      list-style: none;
+      gap: 5px;
+      justify-content: center;
+      align-items: center;
+    }
+    .pagination li {
+      border: 1px solid #3a3a3a;
+      padding: 8px 15px;
+      cursor: pointer;
+      user-select: none;
+      border-radius: 8px;
+    }
+    .pagination li.active {
+      background-color: #1D3C5E;
+      color: white;
+      font-weight: bold;
+    }
+    .pagination li.disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    .page-input {
+      width: 50px;
+      padding: 4px;
+      text-align: center;
+      border: none;
+      outline: none;
+    }
   </style>
 </head>
-<body><div class="form-cont">
-  <div class="input-cont-drop">
-    <label class="input-label">Dropdown</label>
-    <div class="form-dropdown-other">Select an option</div>
-    <div class="dropdown-options-other">
-      <div class="dropdown-item-other" data-value="Option 1">Option 1</div>
-      <div class="dropdown-item-other" data-value="Option 2">Option 2</div>
-      <div class="dropdown-item-other" data-value="Option 3">Option 3</div>
-      <div class="other-option">
-        Other :
-        <input class="form-dropdown-input" type="text" placeholder="Enter option" />
-      </div>
-    </div>
-  </div>
+<body>
 
-  <div class="input-cont-drop">
-    <label class="input-label">Dropdown</label>
-    <div class="form-dropdown-other">Select an option</div>
-    <div class="dropdown-options-other">
-      <div class="dropdown-item-other" data-value="Option 1">Option 1</div>
-      <div class="dropdown-item-other" data-value="Option 2">Option 2</div>
-      <div class="dropdown-item-other" data-value="Option 3">Option 3</div>
-      <div class="other-option">
-        Other :
-        <input class="form-dropdown-input" type="text" placeholder="Enter option" />
-      </div>
-    </div>
-  </div>
-</div>
- 
-  <script>
-    document.querySelectorAll('.input-cont-drop').forEach(container => {
-      const customSelect = container.querySelector('.form-dropdown-other');
-      const dropdownOptions = container.querySelector('.dropdown-options-other');
-      const allOptions = container.querySelectorAll('.dropdown-item-other');
-      const allOtherOptions = container.querySelectorAll('.other-option');
+<h3>Pagination Component</h3>
+<ul class="pagination" id="pagination" data-total-pages="20">
   
-      // Toggle dropdown
-      customSelect.addEventListener('click', () => {
-        dropdownOptions.style.display = dropdownOptions.style.display === 'block' ? 'none' : 'block';
-      });
-  
-      // Regular options
-      allOptions.forEach(option => {
-        option.addEventListener('click', () => {
-          const value = option.getAttribute('data-value');
-          customSelect.textContent = value;
-          dropdownOptions.style.display = 'none';
-  
-          // Reset all other inputs
-          allOtherOptions.forEach(o => {
-            o.classList.remove('selected');
-            const input = o.querySelector('input');
-            input.style.display = 'none';
-            input.value = '';
-          });
-        });
-      });
-  
-      // Other options (for each)
-      allOtherOptions.forEach(otherOption => {
-        const input = otherOption.querySelector('input');
-  
-        otherOption.addEventListener('click', (e) => {
-          e.stopPropagation();
-  
-          // Reset others
-          allOtherOptions.forEach(o => {
-            if (o !== otherOption) {
-              o.classList.remove('selected');
-              o.querySelector('input').style.display = 'none';
-              o.querySelector('input').value = '';
-            }
-          });
-  
-          otherOption.classList.add('selected');
-          input.style.display = 'inline-block';
-          input.focus();
-          customSelect.textContent = 'Other :';
-        });
-  
-        input.addEventListener('input', () => {
-          customSelect.textContent = 'Other : ' + input.value;
-        });
-      });
-  
-      // Close dropdown when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!container.contains(e.target)) {
-          dropdownOptions.style.display = 'none';
-        }
-      });
+</ul>
+
+<script>
+  let currentPage = 1;
+
+function updatePagination(page) {
+  const pagination = document.getElementById("pagination");
+  const totalPages = parseInt(pagination.getAttribute("data-total-pages"));
+  pagination.innerHTML = "";
+
+  const createPage = (label, value, isActive = false, disabled = false) => {
+    const li = document.createElement("li");
+    li.textContent = label;
+    if (isActive) li.classList.add("active");
+    if (disabled) li.classList.add("disabled");
+    li.addEventListener("click", () => {
+      if (!disabled) {
+        currentPage = value;
+        updatePagination(currentPage);
+      }
     });
-  </script>
-  
-  
+    pagination.appendChild(li);
+  };
+
+  // Prev Button
+  createPage("‹", page - 1, false, page === 1);
+
+  const range = 2;
+  let startPage = Math.max(1, page - range);
+  let endPage = Math.min(totalPages, page + range);
+
+  if (startPage > 1) {
+    createPage("1", 1, page === 1);
+    if (startPage > 2) {
+      const ellipsis = document.createElement("li");
+      ellipsis.textContent = "...";
+      ellipsis.classList.add("disabled");
+      pagination.appendChild(ellipsis);
+    }
+  }
+
+  for (let i = startPage; i <= endPage; i++) {
+    createPage(i, i, page === i);
+  }
+
+  if (endPage < totalPages) {
+    if (endPage < totalPages - 1) {
+      const ellipsis = document.createElement("li");
+      ellipsis.textContent = "...";
+      ellipsis.classList.add("disabled");
+      pagination.appendChild(ellipsis);
+    }
+
+    // Input box to jump to a specific page
+    const inputLi = document.createElement("li");
+    const input = document.createElement("input");
+    input.type = "number";
+    input.min = 1;
+    input.max = totalPages;
+    input.placeholder = "Page";
+    input.className = "page-input";
+
+    input.addEventListener("keydown", function(e) {
+      if (e.key === "Enter") {
+        const val = parseInt(e.target.value);
+        if (!isNaN(val) && val >= 1 && val <= totalPages) {
+          currentPage = val;
+          updatePagination(currentPage);
+        }
+      }
+    });
+
+    inputLi.appendChild(input);
+    pagination.appendChild(inputLi);
+  }
+
+  // Next Button
+  createPage("›", page + 1, false, page === totalPages);
+}
+
+updatePagination(currentPage);
+
+</script>
+
 </body>
 </html>

@@ -89,6 +89,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const fileList = document.querySelector(".form-tb-list");
     let storedFiles = JSON.parse(localStorage.getItem("uploadedFiles")) || [];
 
+    fileList.style.padding = "20px"; // Adjust value as needed
+
     function getFileIcon(fileType) {
         const icons = {
             "application/pdf": "https://cdn-icons-png.flaticon.com/512/337/337946.png", // PDF Icon
@@ -109,8 +111,8 @@ document.addEventListener("DOMContentLoaded", function () {
         fileList.innerHTML = "";
         files.forEach((file) => {
             let fileContainer = document.createElement("div");
-            fileContainer.style.width = "80px";
-            fileContainer.style.height = "80px";
+            fileContainer.style.width = "90px";
+            fileContainer.style.height = "90px";
             fileContainer.style.overflow = "hidden";
             fileContainer.style.position = "relative";
 

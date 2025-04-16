@@ -12,6 +12,7 @@
 @import url("table.css");
 @import url("modal.css");
 @import url("dropdown.css");
+@import url("pagination.css");
 
 * {
   margin: 0;
@@ -501,12 +502,19 @@
 
 
 .form-tb-list {
-  min-height: 45px;
-  max-height: 80px;
+  min-height: 100px;
+  gap: 10px;
+  max-height: 250px;
+  display: flex;
   min-width: 250px;
   list-style-type: none;
   appearance: none;
   overflow: auto;
+  flex-wrap: wrap;
+  border: solid 0.5px #66a3c9;
+  border-radius: 10px;
+  padding: 12px;
+  scrollbar-width: none;
 }
 
 .input-other-cont {
@@ -568,25 +576,6 @@ display: none;
   padding-left: 30px;
   width: 100%;
 }
-
-.form-tb-list a {
-  font-size: 14px;
-  color: #0077B6;
-}
-
-.form-tb-list a:hover {
-  color: #015cb1;
-}
-
-.form-tb-list {
-  gap: 10px;
-  border: solid 0.5px #66a3c9;
-  border-radius: 10px;
-  padding: 12px;
-  scrollbar-width: none;
-  overflow: auto;
-}
-
 
 /* Styling for a radio buttons */
 .radio-cont {

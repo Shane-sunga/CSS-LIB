@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+
+    <div class="menu-toggle">☰</div>
+    <div class="sidebar">
+        <button class="close-btn">✖</button>
+        <h2>Sidebar</h2>
+        <a href="index.html">Dashboard</a>
+        <a href="alerts.html">Alerts</a>
+        <a href="buttons.html">Buttons</a>
+        <a href="cards.html">Cards</a>
+        <a href="containers.html">Containers</a>
+        <a href="Form.html">Forms</a>
+        <a href="loading.html">Loadings</a>
+        <a href="modal.html">Modals</a>
+        <a href="navbars.html">Navbars</a>
+        <a href="tables.html">Table</a>
+        <a href="textarea.html">Textarea</a>
+        <a href="label.html">Label</a>
+        <a href="sidebar.html">Sidebar</a>
+        <a href="pagination.html">Pagination</a>
+    </div>
+
+
+    <div class="step-container">
+        <div class="progress-step-bar"></div>
+        <div class="progress-step-fill"></div>
+
+        <div class="step-num active"><span class="step-index">1</span><span class="step-text">Step 1</span></div>
+        <div class="step-num"><span class="step-index">2</span><span class="step-text">Step 2</span></div>
+        <div class="step-num"><span class="step-index">3</span><span class="step-text">Step 3</span></div>
+        <div class="step-num"><span class="step-index">4</span><span class="step-text">Step 4</span></div>
+    </div>
+
+    <div class="btn-cont">
+        <button class="prev-step-btn" disabled>Previous</button>
+        <button class="next-step-btn">Next</button>
+    </div>
+
+    <div class="container">
+        <div class="code-style">
+            <div class="copy-btn-cont">
+                <i class="bi bi-clipboard copyButton"> Copy</i>
+            </div>
+            <pre><code class="codeBlock">
+                <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"step-container"</span><span class="code-html">&gt;</span>
+                    <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"progress-step-bar"</span><span class="code-html">&gt;&lt;/div&gt;</span>
+                    <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"progress-step-fill"</span><span class="code-html">&gt;&lt;/div&gt;</span>
+            
+                    <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"step-num active"</span><span class="code-html">&gt;</span>
+                        <span class="code-html">&lt;span</span> <span class="code-attr">class</span>=<span class="code-value">"step-index"</span><span class="code-html">&gt;</span>1<span class="code-html">&lt;/span&gt;</span>
+                        <span class="code-html">&lt;span</span> <span class="code-attr">class</span>=<span class="code-value">"step-text"</span><span class="code-html">&gt;</span>Step 1<span class="code-html">&lt;/span&gt;</span>
+                    <span class="code-html">&lt;/div&gt;</span>
+            
+                    <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"step-num"</span><span class="code-html">&gt;</span>
+                        <span class="code-html">&lt;span</span> <span class="code-attr">class</span>=<span class="code-value">"step-index"</span><span class="code-html">&gt;</span>2<span class="code-html">&lt;/span&gt;</span>
+                        <span class="code-html">&lt;span</span> <span class="code-attr">class</span>=<span class="code-value">"step-text"</span><span class="code-html">&gt;</span>Step 2<span class="code-html">&lt;/span&gt;</span>
+                    <span class="code-html">&lt;/div&gt;</span>
+            
+                    <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"step-num"</span><span class="code-html">&gt;</span>
+                        <span class="code-html">&lt;span</span> <span class="code-attr">class</span>=<span class="code-value">"step-index"</span><span class="code-html">&gt;</span>3<span class="code-html">&lt;/span&gt;</span>
+                        <span class="code-html">&lt;span</span> <span class="code-attr">class</span>=<span class="code-value">"step-text"</span><span class="code-html">&gt;</span>Step 3<span class="code-html">&lt;/span&gt;</span>
+                    <span class="code-html">&lt;/div&gt;</span>
+            
+                    <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"step-num"</span><span class="code-html">&gt;</span>
+                        <span class="code-html">&lt;span</span> <span class="code-attr">class</span>=<span class="code-value">"step-index"</span><span class="code-html">&gt;</span>4<span class="code-html">&lt;/span&gt;</span>
+                        <span class="code-html">&lt;span</span> <span class="code-attr">class</span>=<span class="code-value">"step-text"</span><span class="code-html">&gt;</span>Step 4<span class="code-html">&lt;/span&gt;</span>
+                    <span class="code-html">&lt;/div&gt;</span>
+                <span class="code-html">&lt;/div&gt;</span>
+            
+                <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"btn-cont"</span><span class="code-html">&gt;</span>
+                    <span class="code-html">&lt;button</span> <span class="code-attr">class</span>=<span class="code-value">"prev-step-btn"</span> <span class="code-attr">disabled</span><span class="code-html">&gt;</span>Previous<span class="code-html">&lt;/button&gt;</span>
+                    <span class="code-html">&lt;button</span> <span class="code-attr">class</span>=<span class="code-value">"next-step-btn"</span><span class="code-html">&gt;</span>Next<span class="code-html">&lt;/button&gt;</span>
+                <span class="code-html">&lt;/div&gt;</span>
+            </code></pre>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="style-exp">
+
+            <h3>Table with Smart Pagination</h3>
+            <p id="tableInfo"></p>
+            <div class="table-cont">
+                <table id="dataTable" class="table-simple">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <ul class="pagination" id="pagination"></ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="code-style">
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="style-exp">
+            <ul class="pagination-fancy">
+                <li>Prev</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>Next</li>
+              </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="code-style">
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="style-exp">
+            <ul class="pagination-simp">
+                <li><<i class="bi bi-chevron-double-left"></i><</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>><i class="bi bi-chevron-double-right">></i></li>
+              </ul>
+        </div>
+    </div>
+    <script type="module" src="script/script.js"></script>
+</body>
+
+</html>

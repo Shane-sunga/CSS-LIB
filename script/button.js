@@ -45,4 +45,47 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 2000); 
         });
     });
+
+    document.querySelectorAll('.step-container').forEach(container => {
+        let currentStep = 1;
+        const steps = container.querySelectorAll('.step-num');
+        const progressFill = container.querySelector('.progress-step-fill');
+
+        const prevBtn = container.nextElementSibling.querySelector('.prev-step-btn');
+        const nextBtn = container.nextElementSibling.querySelector('.next-step-btn');
+
+        function updateSteps() {
+            steps.forEach((step, index) => {
+                if (index < currentStep) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+
+            progressFill.style.width = `${((currentStep - 1) / (steps.length - 1)) * 100}%`;
+
+            prevBtn.disabled = currentStep === 1;
+            nextBtn.disabled = currentStep === steps.length;
+        }
+
+        function changeStep(direction) {
+            currentStep += direction;
+            if (currentStep < 1) currentStep = 1;
+            if (currentStep > steps.length) currentStep = steps.length;
+            updateSteps();
+        }
+
+        steps.forEach((step, index) => {
+            step.addEventListener('click', () => {
+                currentStep = index + 1;
+                updateSteps();
+            });
+        });
+
+        prevBtn.addEventListener('click', () => changeStep(-1));
+        nextBtn.addEventListener('click', () => changeStep(1));
+
+        updateSteps();
+    });
 });

@@ -84,3 +84,93 @@
   gap: 10px;
 }
 
+      /* Container */
+      .step-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        max-width: 600px;
+        margin: 50px auto;
+        position: relative;
+    }
+
+    /* Progress Bar Background */
+    .progress-step-bar {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: #e0e0e0;
+        z-index: -1;
+        transform: translateY(-50%);
+    }
+
+    /* Dynamic Progress Fill */
+    .progress-step-fill {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 0%;
+        height: 5px;
+        background:#6CA0D1;
+        transition: width 0.4s ease-in-out;
+        transform: translateY(-50%);
+    }
+
+    /* Step Circles */
+    .step-num {
+        width: 40px;
+        height: 40px;
+        background: #e0e0e0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: #555;
+        position: relative;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    /* Active Step */
+    .step-num.active {
+        background: #1D3C5E;
+        color: white;
+    }
+
+    /* Step Text */
+    .step-text {
+        position: absolute;
+        top: 50px;
+        font-size: 14px;
+        color: #555;
+        width: 80px;
+        text-align: center;
+    }
+
+    /* Buttons */
+    .btn-cont {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .prev-step-btn,
+    .next-step-btn {
+        margin: 10px;
+        padding: 10px 20px;
+        background: #1D3C5E;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 12px;
+    }
+
+    .prev-step-btn:disabled,
+    .next-step-btn:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+    }

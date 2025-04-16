@@ -9,6 +9,7 @@ import "./radio-toggle.js";
 import "./textarea.js";
 import "./navbar.js";
 import "./container.js";
+import "./pagination.js";
 
 
 
@@ -23,7 +24,7 @@ function loadScript(scriptName) {
 }
 
 const scripts = [
-    "textbox", "sidebar", "dropdown", "date-time" , "modal",
+    "textbox", "sidebar", "dropdown", "date-time" , "modal", "pagination",
     "radio-toggle", "textarea", "alerts", "button", "navbar", "container"];
 
 scripts.forEach(script => loadScript(script));
