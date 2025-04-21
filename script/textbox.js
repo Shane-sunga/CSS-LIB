@@ -1,47 +1,222 @@
 document.addEventListener("DOMContentLoaded", function () {
-    function validateForm(form) {
-        let isValid = true;
-        const inputs = form.querySelectorAll("input[required], select[required], textarea[required]");
+    $(document).ready(function () {
+        // === DROPDOWN SELECTIONS ===
+        $(document).on('click', '.dropdown-item', function () {
+            const selectedText = $(this).text();
+            const dropdown = $(this).closest('.dropdown');
+            dropdown.find('.dropdown-select p').text(selectedText);
+            dropdown.find('.dropdown-select').attr('data-value', selectedText);
+        });
 
-        inputs.forEach((input) => {
-            if (input.type === "radio") {
-                const radioGroup = form.querySelectorAll(`input[name="${input.name}"]`);
-                const isChecked = [...radioGroup].some(radio => radio.checked);
+        // === "OTHER" OPTION SELECTION ===
+        $(document).on('click', '.dropdown-item-other', function () {
+            const selectedValue = $(this).data('value');
+            const container = $(this).closest('.input-cont-drop');
 
-                if (!isChecked) {
-                    radioGroup.forEach(radio => {
-                        radio.style.outline = "2px solid red";
-                    });
-                    isValid = false;
-                } else {
-                    radioGroup.forEach(radio => {
-                        radio.style.outline = "none";
-                    });
+            container.find('.form-dropdown-other')
+                .text(selectedValue)
+                .attr('data-value', selectedValue);
+
+            container.find('.form-dropdown-input').val('');
+        });
+
+        // === LIVE INPUT UPDATE FOR "OTHER" ===
+        $(document).on('input', '.form-dropdown-input', function () {
+            const customValue = $(this).val();
+            const container = $(this).closest('.input-cont-drop');
+
+            container.find('.form-dropdown-other')
+                .text(customValue || 'Select an option')
+                .attr('data-value', customValue);
+        });
+
+        // === TOGGLE SWITCH LIVE CHANGE ===
+        $(document).on('change', '.toggleSwitch input[type="radio"], .medium-toggleSwitch input[type="radio"], .small-toggleSwitch input[type="radio"]', function () {
+            const toggleContainer = $(this).closest('.toggleSwitch, .medium-toggleSwitch, .small-toggleSwitch');
+            if (toggleContainer.find('input[type="radio"].radio-input-on, .medium-radio-input-on, .small-radio-input-on').is(':checked')) {
+                toggleContainer.css('border', '');
+            }
+        });
+
+        $('.form').each(function () {
+            const currentForm = $(this);
+
+            currentForm.find('.form-btn-submit').on('click', function (e) {
+                e.preventDefault();
+
+                let isValid = true;
+                currentForm.find('[required]').css('border', '');
+
+                currentForm.find('[required]').each(function () {
+                    const $field = $(this);
+
+
+
+                    // === ZIP CODE VALIDATION ===
+                    if ($field.hasClass('zip-input')) {
+                        const inputGroup = $field.closest('.input-group');
+                        if (!$field.val()) {
+                            inputGroup.css('border', '2px solid red');
+                            isValid = false;
+                        } else {
+                            inputGroup.css('border', '');
+                        }
+                    }
+
+                    if ($field.hasClass('dropdown-select') || $field.hasClass('form-dropdown-other')) {
+                        if (!$field.attr('data-value')) {
+                            $field.css('border', '2px solid red');
+                            isValid = false;
+                        }
+                    } else if (
+                        $field.hasClass('toggleSwitch') ||
+                        $field.hasClass('medium-toggleSwitch') ||
+                        $field.hasClass('small-toggleSwitch')
+                    ) {
+                        const isChecked = $field.find('input[type="radio"].radio-input-on, .medium-radio-input-on, .small-radio-input-on').is(':checked');
+                        if (!isChecked) {
+                            $field.css('border', '2px solid red');
+                            isValid = false;
+                        }
+                    } else if (!$field.val()) {
+                        $field.css('border', '2px solid red');
+                        isValid = false;
+                    }
+
+                    if ($field.is(':checkbox')) {
+                        if (!$field.is(':checked')) {
+                            $field.css('border', '2px solid red');
+                            isValid = false;
+                        } else {
+                            $field.css('border', '1px solid #d9d9d9');
+                        }
+                    }
+
+                    if ($field.is(':radio')) {
+                        const radioName = $field.attr('name');
+                        const radioGroup = currentForm.find(`input[name="${radioName}"]`);
+                        const isChecked = radioGroup.is(':checked');
+
+                        if (!isChecked) {
+                            radioGroup.each(function () {
+                                $(this).css('outline', '2px solid red');
+                            });
+                            isValid = false;
+                        } else {
+                            radioGroup.each(function () {
+                                $(this).css('outline', 'none');
+                            });
+                        }
+                    }
+
+                    if ($field.hasClass('form-tb-tel')) {
+                        const itiContainer = $field.closest('.iti');
+                        const iti = window.intlTelInputGlobals.getInstance($field[0]);
+                        if (!iti.isValidNumber()) {
+                            itiContainer.css('border', '2px solid red');
+                            isValid = false;
+                        } else {
+                            itiContainer.css('border', '');
+                        }
+                    }
+                });
+            });
+        });
+
+        // === RADIO BUTTON GROUP VALIDATION ===
+        $(document).on('change', 'input[type="radio"]', function () {
+            const radioName = $(this).attr('name');
+            const radioGroup = $(`input[name="${radioName}"]`);
+
+            // Check if any radio in the group is selected
+            if (radioGroup.is(':checked')) {
+                // Remove red outline if any was previously applied
+                radioGroup.each(function () {
+                    $(this).css('outline', 'none');
+                });
+            }
+        });
+
+
+        // === REAL-TIME VALIDATION TO REMOVE RED BORDER ===
+        $(document).on('input change', '[required]', function () {
+            const $field = $(this);
+
+            // Remove red border for text input and similar fields
+            if ($field.val() && !$field.is(':checkbox') && !$field.is(':radio')) {
+                $field.css('border', '');
+            }
+
+            // Dropdown validation
+            if ($field.hasClass('dropdown-select') || $field.hasClass('form-dropdown-other')) {
+                if ($field.attr('data-value')) {
+                    $field.css('border', '');
                 }
-            } else if (input.type === "checkbox") {
-                if (!input.checked) {
-                    input.style.border = "2px solid red";
-                    isValid = false;
-                } else {
-                    input.style.border = "1px solid #d9d9d9";
+            }
+
+            // Toggle switch validation
+            if (
+                $field.hasClass('toggleSwitch') ||
+                $field.hasClass('medium-toggleSwitch') ||
+                $field.hasClass('small-toggleSwitch')
+            ) {
+                const isChecked = $field.find('input[type="radio"].radio-input-on, .medium-radio-input-on, .small-radio-input-on').is(':checked');
+                if (isChecked) {
+                    $field.css('border', '');
                 }
-            } else {
-                if (input.value.trim() === "") {
-                    input.style.border = "2px solid red";
-                    isValid = false;
-                } else {
-                    input.style.border = "1px solid #ccc";
+            }
+
+            // Checkbox validation
+            if ($field.is(':checkbox')) {
+                if ($field.is(':checked')) {
+                    $field.css('border', '1px solid #d9d9d9');
+                }
+            }
+
+            // Phone number validation
+            if ($field.hasClass('form-tb-tel')) {
+                const itiContainer = $field.closest('.iti');
+                const iti = window.intlTelInputGlobals.getInstance($field[0]);
+                if (iti.isValidNumber()) {
+                    itiContainer.css('border', '');
                 }
             }
         });
 
-        return isValid;
-    }
-    document.querySelectorAll("form").forEach(form => {
-        form.addEventListener("submit", function (e) {
-            if (!validateForm(form)) {
-                e.preventDefault(); // prevent form submission if not valid
+
+        // === TOGGLE SWITCHES (ON/OFF TOGGLE FUNCTION) ===
+        $('.toggleSwitch, .medium-toggleSwitch, .small-toggleSwitch').each(function () {
+            const toggle = $(this);
+            const isMedium = toggle.hasClass('medium-toggleSwitch');
+            const isSmall = toggle.hasClass('small-toggleSwitch');
+            const prefix = isMedium ? 'medium-' : isSmall ? 'small-' : '';
+
+            const radioOff = toggle.find(`.${prefix}radio-input-off`);
+            const radioOn = toggle.find(`.${prefix}radio-input-on`);
+            const toggleText = toggle.find(`.${prefix}toggleText`);
+
+            function updateToggleUI(isOn) {
+                if (isOn) {
+                    toggle.addClass('on');
+                    toggleText.text('ON');
+                } else {
+                    toggle.removeClass('on');
+                    toggleText.text('OFF');
+                }
             }
+
+            toggle.on('click', function () {
+                if (radioOff.prop('checked')) {
+                    radioOn.prop('checked', true).trigger('change');
+                    updateToggleUI(true);
+                } else {
+                    radioOff.prop('checked', true).trigger('change');
+                    updateToggleUI(false);
+                }
+            });
+
+            // Set initial state
+            updateToggleUI(radioOn.prop('checked'));
         });
     });
 
@@ -109,42 +284,133 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateFileList(files) {
         fileList.innerHTML = "";
-        files.forEach((file) => {
+
+        files.forEach((file, index) => {
             let fileContainer = document.createElement("div");
-            fileContainer.style.width = "90px";
-            fileContainer.style.height = "90px";
+            fileContainer.style.width = "160px";
+            fileContainer.style.height = "200px"; // Increased to make space for filename
             fileContainer.style.overflow = "hidden";
             fileContainer.style.position = "relative";
+            fileContainer.style.margin = "5px";
+            fileContainer.style.display = "inline-block";
+            fileContainer.style.verticalAlign = "top";
 
+            // Delete (X) button
+            let deleteBtn = document.createElement("span");
+            deleteBtn.innerHTML = "&times;";
+            deleteBtn.style.position = "absolute";
+            deleteBtn.style.top = "2px";
+            deleteBtn.style.right = "5px";
+            deleteBtn.style.cursor = "pointer";
+            deleteBtn.style.fontSize = "16px";
+            deleteBtn.style.color = "black";
+            deleteBtn.style.background = "white";
+            deleteBtn.style.borderRadius = "50%";
+            deleteBtn.style.padding = "2px 7px";
+            deleteBtn.style.zIndex = "10";
+
+            deleteBtn.addEventListener("click", function () {
+                storedFiles.splice(index, 1);
+                localStorage.setItem("uploadedFiles", JSON.stringify(storedFiles));
+                updateFileList(storedFiles);
+            });
+
+
+
+            // File preview
             let link = document.createElement("a");
             link.href = file.url;
-            link.target = "_blank"; // Opens full file in a new tab
+            link.target = "_blank";
 
             let preview = document.createElement("img");
             preview.style.width = "100%";
-            preview.style.height = "100%";
+            preview.style.height = "140px";
             preview.style.objectFit = "cover";
             preview.style.borderRadius = "8px";
             preview.style.cursor = "pointer";
 
-            if (file.type.startsWith("image/")) {
-                // Show image preview
-                preview.src = file.url;
-            } else if (file.type === "application/pdf") {
-                // Show first page of PDF as preview
-                preview.src = `https://cdn-icons-png.flaticon.com/512/337/337946.png`;
-            } else {
-                // Show document icon for other files
-                preview.src = getFileIcon(file.type);
-            }
-
+            preview.src = file.type.startsWith("image/") ? file.url : getFileIcon(file.type);
             link.appendChild(preview);
+
+            // File name
+            let fileName = document.createElement("p");
+            fileName.textContent = file.name;
+            fileName.style.margin = "5px 0 0 0";
+            fileName.style.fontSize = "12px";
+            fileName.style.textAlign = "center";
+            fileName.style.overflow = "hidden";
+            fileName.style.textOverflow = "ellipsis";
+            fileName.style.whiteSpace = "nowrap";
+            fileName.style.width = "100%";
+
+            fileContainer.appendChild(deleteBtn);
             fileContainer.appendChild(link);
+            fileContainer.appendChild(fileName); // Add file name after preview
             fileList.appendChild(fileContainer);
         });
 
+        // Add icon and drop zone
+        let addContainer = document.createElement("div");
+        addContainer.style.width = "160px";
+        addContainer.style.height = "200px";
+        addContainer.style.margin = "5px";
+        addContainer.style.display = "inline-flex";
+        addContainer.style.alignItems = "center";
+        addContainer.style.justifyContent = "center";
+        addContainer.style.flexDirection = "column";
+        addContainer.style.border = "2px dashed #aaa";
+        addContainer.style.borderRadius = "8px";
+        addContainer.style.cursor = "pointer";
+        addContainer.style.color = "#aaa";
+        addContainer.style.fontSize = "48px";
+        addContainer.style.transition = "border-color 0.3s ease";
+        addContainer.setAttribute("id", "drop-zone");
+
+        let plusIcon = document.createElement("div");
+        plusIcon.innerHTML = "+";
+        addContainer.appendChild(plusIcon);
+
+        let smallText = document.createElement("small");
+        smallText.innerText = "Add files";
+        smallText.style.fontSize = "12px";
+        addContainer.appendChild(smallText);
+
+        fileList.appendChild(addContainer);
+
+        // Click to trigger file input
+        addContainer.addEventListener("click", () => fileInput.click());
+
+        // Drag & Drop
+        addContainer.addEventListener("dragover", function (e) {
+            e.preventDefault();
+            addContainer.style.borderColor = "#333";
+        });
+
+        addContainer.addEventListener("dragleave", function () {
+            addContainer.style.borderColor = "#aaa";
+        });
+
+        addContainer.addEventListener("drop", function (e) {
+            e.preventDefault();
+            addContainer.style.borderColor = "#aaa";
+
+            const droppedFiles = Array.from(e.dataTransfer.files).map(file => ({
+                name: file.name,
+                url: URL.createObjectURL(file),
+                type: file.type
+            }));
+
+            storedFiles = [...storedFiles, ...droppedFiles];
+            localStorage.setItem("uploadedFiles", JSON.stringify(storedFiles));
+            updateFileList(storedFiles);
+        });
+
+
         fileListCont.style.display = files.length > 0 ? "block" : "none";
     }
+
+
+
 
     updateFileList(storedFiles);
 
@@ -280,10 +546,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (phoneInputs.length > 0) {
         phoneInputs.forEach((phoneInput) => {
-            // Select the error message for the current input
-            let errorMsg = document.querySelector(".error");
+            // Get the error message for this specific input
+            const errorMsg = phoneInput.closest(".input-cont")?.querySelector(".error");
 
-            // Initialize intlTelInput for each phone input
+            // Initialize intlTelInput instance for this specific input
             const iti = window.intlTelInput(phoneInput, {
                 initialCountry: "ph",
                 separateDialCode: true,
@@ -291,23 +557,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
             });
 
-            // Validation function
-            function validatePhone() {
-                if (iti.isValidNumber()) {
-                    errorMsg.style.display = "none"; // Hide error message
-                } else {
-                    errorMsg.style.display = "block"; // Show error message
-                }
-            }
+            // Store the instance on the input for later access
+            phoneInput._iti = iti;
 
-            // Event listener for validation
-            phoneInput.addEventListener("blur", validatePhone);
+            // Validation function for this input only
+            phoneInput.addEventListener("blur", function () {
+                if (iti.isValidNumber()) {
+                    errorMsg.style.display = "none";
+                } else {
+                    errorMsg.style.display = "block";
+                }
+            });
         });
     }
 
-    document.querySelector("submit").addEventListener("click", function () {
-        document.querySelectorAll(".form-tb-tel").forEach(input => {
-            input.dispatchEvent(new Event("blur")); // Trigger validation on all inputs
+    // Submit button: manually trigger validation on all inputs
+    document.querySelector(".form-btn-submit").addEventListener("click", function () {
+        phoneInputs.forEach((input) => {
+            input.dispatchEvent(new Event("blur")); // triggers validation for each input separately
         });
     });
 

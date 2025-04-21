@@ -11,8 +11,7 @@
 </head>
 
 <body>
-    <div class="top-navbar-primary">
-        <div class="comp-logs-container">
+
             <div class="menu-toggle">☰</div>
             <div class="sidebar">
                 <button class="close-btn">✖</button>
@@ -30,28 +29,6 @@
                 <a href="textarea.html">Textarea</a>
 
             </div>
-            <span>Top Navbar</span>
-        </div>
-
-        <div class="top-nav-links">
-            <a href="#">
-                <span class="box">
-                    Hello
-                </span>
-            </a>
-            <a href="#">
-                <span class="box">
-                    World
-                </span>
-            </a>
-            <a href="#">
-                <span class="box">
-                    Contact Number
-                </span>
-            </a>
-        </div>
-
-    </div>
 
     <button class="backToTop">
         <svg class="svgIcon" viewBox="0 0 24 24">
@@ -208,9 +185,9 @@
                                 <label class="input-label">Zip Code</label>
                                 <p class="zipMessage"></p>
                             </div>
-                            <div class="input-group">
+                            <div class="input-group" >
                                 <img class="flag-icon">
-                                <input type="number" class="zip-input" placeholder="Enter ZIP Code">
+                                <input type="number" class="zip-input" placeholder="Enter ZIP Code" >
                             </div>
                         </div>
                     </div>
@@ -229,7 +206,6 @@
                         </div>
                         <input type="number" class="form-tb-tel" placeholder="Sample placeholder" required>
                     </div>
-
                     <div class="input-cont">
                         <label class="input-label">Number with Two decimal</label>
                         <input type="number" class="form-tb-deci" placeholder="Sample placeholder" step="0.01" required>
@@ -260,7 +236,7 @@
 
                             <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-cont"</span><span class="code-html">&gt;</span>
                                 <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"form-container"</span><span class="code-html">&gt;</span>
-                                    <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-label-error"</span><span class="code-html">&gt;</span> 
+                                    <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-label-error"</span><span class="code-html">&gt;</span>
                                 <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-label"</span><span class="code-html">&gt;</span>Zip Code<span class="code-html">&lt;/label&gt;</span>
                                 <span class="code-html">&lt;p</span> <span class="code-attr">class</span>=<span class="code-value">"zipMessage"</span><span class="code-html">&gt;&lt;/p&gt;</span>
                             <span class="code-html">&lt;/div&gt;</span>
@@ -271,7 +247,7 @@
                         <span class="code-html">&lt;/div&gt;</span>
                     <span class="code-html">&lt;/div&gt;</span>
                 <span class="code-html">&lt;/div&gt;</span>
-                
+
                     <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"form-cont"</span><span class="code-html">&gt;</span>
                     <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-cont"</span><span class="code-html">&gt;</span>
                         <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-label"</span><span class="code-html">&gt;</span>Contact Number<span class="code-html">&lt;/label&gt;</span>
@@ -279,7 +255,7 @@
                     <span class="code-html">&lt;/div&gt;</span>
 
                     <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-cont"</span><span class="code-html">&gt;</span>
-                            <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-label-error"</span><span class="code-html">&gt;</span> 
+                            <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-label-error"</span><span class="code-html">&gt;</span>
                         <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-label"</span><span class="code-html">&gt;</span>Phone Number<span class="code-html">&lt;/label&gt;</span>
                         <span class="code-html">&lt;p</span> <span class="code-attr">class</span>=<span class="code-value">"error"</span><span class="code-html">&gt;</span>Invalid phone number!<span class="code-html">&lt;/p&gt;</span>
                     <span class="code-html">&lt;/div&gt;</span>
@@ -304,10 +280,10 @@
                     <div class="input-cont">
                         <label class="input-label">Drop-down</label>
                         <div class="dropdown">
-                            <div class="dropdown-select">
+                            <div class="dropdown-select" data-value="" required>
                                 <p>Select Option</p> <i class="bi bi-chevron-down"></i>
                             </div>
-                            <div class="dropdown-content ">
+                            <div class="dropdown-content">
                                 <div class="dropdown-options">
                                     <div class="dropdown-item">Option 1</div>
                                     <div class="dropdown-item">Option 2</div>
@@ -318,21 +294,28 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                     <div class="input-cont">
                         <label class="input-label">Separate Date</label>
                         <div class="sepdate-cont">
-                            <select class="input-day">
+                            <select class="input-day" required>
                                 <option value="">DD</option>
                             </select>
-                            <select class="input-month">
+                            <select class="input-month" required>
                                 <option value="">MM</option>
                             </select>
-                            <select class="input-year">
+                            <select class="input-year" required>
                                 <option value="">YYYY</option>
                             </select>
                         </div>
                         <input type="hidden" class="input-full-date" name="full_date">
+                    </div>
+                </div>
+                <div class="form-cont">
+                    <div class="input-cont">
+                        <input type="submit" class="form-btn-submit">
+
                     </div>
                 </div>
             </form>
@@ -351,10 +334,10 @@
                                 <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-label"</span><span class="code-html">&gt;</span>Drop-down<span class="code-html">&lt;/label&gt;</span>
                             <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown"</span><span class="code-html">&gt;</span>
                                 <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown-select"</span><span class="code-html">&gt;</span>
-                                    <span class="code-html">&lt;p&gt;</span>Select Option<span class="code-html">&lt;/p&gt;</span> 
+                                    <span class="code-html">&lt;p&gt;</span>Select Option<span class="code-html">&lt;/p&gt;</span>
                                     <span class="code-html">&lt;i</span> <span class="code-attr">class</span>=<span class="code-value">"bi bi-chevron-down"</span><span class="code-html">&gt;&lt;/i&gt;</span>
                                 <span class="code-html">&lt;/div&gt;</span>
-                                <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown-content"</span><span class="code-html">&gt;</span>         
+                                <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown-content"</span><span class="code-html">&gt;</span>
                                     <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown-options"</span><span class="code-html">&gt;</span>
                                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown-item"</span><span class="code-html">&gt;</span>Option 1<span class="code-html">&lt;/div&gt;</span>
                                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown-item"</span><span class="code-html">&gt;</span>Option 2<span class="code-html">&lt;/div&gt;</span>
@@ -390,14 +373,14 @@
             <form action="" class="form">
                 <div class="form-cont">
                     <div class="input-cont">
-                        <div class="dropdown">
-                            <div class="dropdown-select">
+                        <div class="dropdown" >
+                            <div class="dropdown-select" required>
                                 <p>Select Option</p> <i class="bi bi-chevron-down"></i>
                             </div>
                             <div class="dropdown-content ">
                                 <div class="input-wrapper">
                                     <i class="bi bi-search"></i>
-                                    <input type="search" class="dropdown-search form-tb-search" placeholder="Search...">
+                                    <input type="search" class="dropdown-search form-tb-search" data-value="" placeholder="Search...">
                                 </div>
                                 <div class="dropdown-options">
                                     <div class="dropdown-item">Option 1</div>
@@ -413,7 +396,7 @@
 
                     <div class="input-cont">
                         <div class="dropdown">
-                            <div class="dropdown-select dropdown-border-primary">
+                            <div class="dropdown-select dropdown-border-primary" data-value="" required>
                                 <p>Select Option</p> <i class="bi bi-chevron-down"></i>
                             </div>
                             <div class="dropdown-content ">
@@ -438,7 +421,7 @@
                 <div class="form-cont">
                     <div class="input-cont-drop">
                         <label class="input-label">Dropdown</label>
-                        <div class="form-dropdown-other">Select an option</div>
+                        <div class="form-dropdown-other" required>Select an option</div>
                         <div class="dropdown-options-other">
                             <div class="dropdown-item-other" data-value="Option 1">Option 1</div>
                             <div class="dropdown-item-other" data-value="Option 2">Option 2</div>
@@ -453,7 +436,7 @@
 
                     <div class="input-cont-drop">
                         <label class="input-label">Dropdown</label>
-                        <div class="form-dropdown-other">Select an option</div>
+                        <div class="form-dropdown-other" required>Select an option</div>
                         <div class="dropdown-options-other">
                             <div class="dropdown-item-other" data-value="Option 1">Option 1</div>
                             <div class="dropdown-item-other" data-value="Option 2">Option 2</div>
@@ -463,6 +446,12 @@
                                 <input class="form-dropdown-input" type="text" placeholder="Enter option" />
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="form-cont">
+                    <div class="input-cont">
+                        <input type="submit" class="form-btn-submit">
+
                     </div>
                 </div>
             </form>
@@ -477,19 +466,19 @@
             <pre><code class="codeBlock">
                     <span class="code-html">&lt;form</span> <span class="code-attr">action</span>=<span class="code-value">""</span> <span class="code-attr">class</span>=<span class="code-value">"form"</span><span class="code-html">&gt;</span>
                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"form-cont"</span><span class="code-html">&gt;</span>
-                    
+
                             <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown"</span><span class="code-html">&gt;</span>
                                 <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown-select"</span><span class="code-html">&gt;</span>
-                                    <span class="code-html">&lt;p&gt;</span>Select Option<span class="code-html">&lt;/p&gt;</span> 
+                                    <span class="code-html">&lt;p&gt;</span>Select Option<span class="code-html">&lt;/p&gt;</span>
                                     <span class="code-html">&lt;i</span> <span class="code-attr">class</span>=<span class="code-value">"bi bi-chevron-down"</span><span class="code-html">&gt;&lt;/i&gt;</span>
                                 <span class="code-html">&lt;/div&gt;</span>
-                    
+
                                 <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown-content"</span><span class="code-html">&gt;</span>
                                     <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-wrapper"</span><span class="code-html">&gt;</span>
                                         <span class="code-html">&lt;i</span> <span class="code-attr">class</span>=<span class="code-value">"bi bi-search"</span><span class="code-html">&gt;&lt;/i&gt;</span>
                                         <span class="code-html">&lt;input</span> <span class="code-attr">type</span>=<span class="code-value">"search"</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown-search form-tb-search"</span> <span class="code-attr">placeholder</span>=<span class="code-value">"Search..."</span><span class="code-html">&gt;</span>
                                     <span class="code-html">&lt;/div&gt;</span>
-                    
+
                                     <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown-options"</span><span class="code-html">&gt;</span>
                                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown-item"</span><span class="code-html">&gt;</span>Option 1<span class="code-html">&lt;/div&gt;</span>
                                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown-item"</span><span class="code-html">&gt;</span>Option 2<span class="code-html">&lt;/div&gt;</span>
@@ -497,19 +486,19 @@
                                     <span class="code-html">&lt;/div&gt;</span>
                                 <span class="code-html">&lt;/div&gt;</span>
                             <span class="code-html">&lt;/div&gt;</span>
-                    
+
                             <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown"</span><span class="code-html">&gt;</span>
                                 <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown-border-primary"</span><span class="code-html">&gt;</span>
-                                    <span class="code-html">&lt;p&gt;</span>Select Option<span class="code-html">&lt;/p&gt;</span> 
+                                    <span class="code-html">&lt;p&gt;</span>Select Option<span class="code-html">&lt;/p&gt;</span>
                                     <span class="code-html">&lt;i</span> <span class="code-attr">class</span>=<span class="code-value">"bi bi-chevron-down"</span><span class="code-html">&gt;&lt;/i&gt;</span>
                                 <span class="code-html">&lt;/div&gt;</span>
-                    
+
                                 <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown-content"</span><span class="code-html">&gt;</span>
                                     <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-wrapper"</span><span class="code-html">&gt;</span>
                                         <span class="code-html">&lt;i</span> <span class="code-attr">class</span>=<span class="code-value">"bi bi-search"</span><span class="code-html">&gt;&lt;/i&gt;</span>
                                         <span class="code-html">&lt;input</span> <span class="code-attr">type</span>=<span class="code-value">"search"</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown-search form-tb-search"</span> <span class="code-attr">placeholder</span>=<span class="code-value">"Search..."</span><span class="code-html">&gt;</span>
                                     <span class="code-html">&lt;/div&gt;</span>
-                    
+
                                     <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown-options"</span><span class="code-html">&gt;</span>
                                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown-item"</span><span class="code-html">&gt;</span>Option 1<span class="code-html">&lt;/div&gt;</span>
                                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"dropdown-item"</span><span class="code-html">&gt;</span>option 2<span class="code-html">&lt;/div&gt;</span>
@@ -517,7 +506,7 @@
                                     <span class="code-html">&lt;/div&gt;</span>
                                 <span class="code-html">&lt;/div&gt;</span>
                             <span class="code-html">&lt;/div&gt;</span>
-                    
+
                         <span class="code-html">&lt;/div&gt;</span>
                     <span class="code-html">&lt;/form&gt;</span>
                     </code></pre>
@@ -530,30 +519,56 @@
                 <div class="form-cont">
                     <div class="toggle-cont">
                         <label class="input-label">Toggle Button</label>
-                        <div class="toggleSwitch">
-                            <input type="radio" name="toggle" class="radio-input-off" checked>
-                            <input type="radio" name="toggle" class="radio-input-on">
+                        <div class="toggleSwitch" >
+                            <input type="radio" name="toggle2" class="radio-input-off" checked>
+                            <input type="radio" name="toggle2" class="radio-input-on">
                             <div class="slide"></div>
                             <span class="toggleText">OFF</span>
                         </div>
+                        <div class="toggleSwitch" required>
+                            <input type="radio" name="toggle1" class="radio-input-off" checked>
+                            <input type="radio" name="toggle1" class="radio-input-on">
+                            <div class="slide"></div>
+                            <span class="toggleText">OFF</span>
+                        </div>
+
                     </div>
                     <div class="toggle-cont">
                         <label class="input-label">Medium Toggle Button</label>
-                        <div class="medium-toggleSwitch">
-                            <input type="radio" name="medium-toggle" class="medium-radio-input-off" checked>
-                            <input type="radio" name="medium-toggle" class="medium-radio-input-on">
+                        <div class="medium-toggleSwitch" >
+                            <input type="radio" name="medium-toggle2" class="medium-radio-input-off" checked >
+                            <input type="radio" name="medium-toggle2" class="medium-radio-input-on">
+                            <div class="slide"></div>
+                            <span class="medium-toggleText">OFF</span>
+                        </div>
+                        <div class="medium-toggleSwitch" required>
+                            <input type="radio" name="medium-toggle1" class="medium-radio-input-off" checked >
+                            <input type="radio" name="medium-toggle1" class="medium-radio-input-on">
                             <div class="slide"></div>
                             <span class="medium-toggleText">OFF</span>
                         </div>
                     </div>
                     <div class="toggle-cont">
                         <label class="input-label">Small Toggle Button</label>
-                        <div class="small-toggleSwitch">
-                            <input type="radio" name="medium-toggle" class="small-radio-input-off" checked>
-                            <input type="radio" name="medium-toggle" class="small-radio-input-on">
+                        <div class="small-toggleSwitch" >
+                            <input type="radio" name="small-toggle2" class="small-radio-input-off" checked>
+                            <input type="radio" name="small-toggle2" class="small-radio-input-on">
                             <div class="slide"></div>
                             <span class="small-toggleText">OFF</span>
                         </div>
+                        <div class="small-toggleSwitch" required>
+                            <input type="radio" name="small-toggle1" class="small-radio-input-off" checked>
+                            <input type="radio" name="small-toggle1" class="small-radio-input-on">
+                            <div class="slide"></div>
+                            <span class="small-toggleText">OFF</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-cont">
+                    <div class="input-cont">
+                        <input type="submit" class="form-btn-submit">
+
                     </div>
                 </div>
             </form>
@@ -568,7 +583,7 @@
             <pre><code class="codeBlock">
                 <span class="code-html">&lt;form</span> <span class="code-attr">class</span>=<span class="code-value">"form"</span><span class="code-html">&gt;</span>
                     <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"form-cont"</span><span class="code-html">&gt;</span>
-                
+
                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"toggle-cont"</span><span class="code-html">&gt;</span>
                             <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-label"</span><span class="code-html">&gt;</span>Toggle Button<span class="code-html">&lt;/label&gt;</span>
                             <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"toggleSwitch"</span><span class="code-html">&gt;</span>
@@ -578,7 +593,7 @@
                                 <span class="code-html">&lt;span</span> <span class="code-attr">class</span>=<span class="code-value">"toggleText"</span><span class="code-html">&gt;</span>OFF<span class="code-html">&lt;/span&gt;</span>
                             <span class="code-html">&lt;/div&gt;</span>
                         <span class="code-html">&lt;/div&gt;</span>
-                
+
                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"toggle-cont"</span><span class="code-html">&gt;</span>
                             <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-label"</span><span class="code-html">&gt;</span>Medium Toggle Button<span class="code-html">&lt;/label&gt;</span>
                             <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"medium-toggleSwitch"</span><span class="code-html">&gt;</span>
@@ -588,7 +603,7 @@
                                 <span class="code-html">&lt;span</span> <span class="code-attr">class</span>=<span class="code-value">"medium-toggleText"</span><span class="code-html">&gt;</span>OFF<span class="code-html">&lt;/span&gt;</span>
                             <span class="code-html">&lt;/div&gt;</span>
                         <span class="code-html">&lt;/div&gt;</span>
-                
+
                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"toggle-cont"</span><span class="code-html">&gt;</span>
                             <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-label"</span><span class="code-html">&gt;</span>Small Toggle Button<span class="code-html">&lt;/label&gt;</span>
                             <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"small-toggleSwitch"</span><span class="code-html">&gt;</span>
@@ -598,7 +613,7 @@
                                 <span class="code-html">&lt;span</span> <span class="code-attr">class</span>=<span class="code-value">"small-toggleText"</span><span class="code-html">&gt;</span>OFF<span class="code-html">&lt;/span&gt;</span>
                             <span class="code-html">&lt;/div&gt;</span>
                         <span class="code-html">&lt;/div&gt;</span>
-                
+
                     <span class="code-html">&lt;/div&gt;</span>
                 <span class="code-html">&lt;/form&gt;</span>
                 </code></pre>
@@ -635,18 +650,23 @@
                         <label class="input-label">Radio Button</label>
                         <div class="radio-cont">
                             <label class="radio-label">
-                                <input type="radio" name="form-radio-group" required value="option1"> Option 1
+                                <input type="radio" name="form-radio" required value="option1"> Option 1
                             </label>
                             <label class="radio-label">
-                                <input type="radio" name="form-radio-group" required value="option2"> Option 2
+                                <input type="radio" name="form-radio" required value="option2"> Option 2
                             </label>
                             <label class="radio-label">
-                                <input type="radio" name="form-radio-group" required value="option3"> Option 3
+                                <input type="radio" name="form-radio" required value="option3"> Option 3
                             </label>
                             <label class="radio-label">
-                                <input type="radio" name="form-radio-group" required value="option4"> Option 4
+                                <input type="radio" name="form-radio" required value="option4"> Option 4
                             </label>
                         </div>
+                    </div>
+                </div>
+                <div class="form-cont">
+                    <div class="input-cont">
+                        <input type="submit" class="form-btn-submit">
                     </div>
                 </div>
             </form>
@@ -701,7 +721,7 @@
                             <span class="code-html">&lt;/label&gt;</span>
                         <span class="code-html">&lt;/div&gt;</span>
                     <span class="code-html">&lt;/div&gt;</span>
-                               
+
                     <span class="code-html">&lt;/div&gt;</span>
                 <span class="code-html">&lt;/form&gt;</span>
                 </code></pre>
@@ -719,13 +739,13 @@
                     <div class="input-cont">
                         <label class="input-label">Separate Date</label>
                         <div style="display: flex; gap: 5px;">
-                            <select class="input-day">
+                            <select class="input-day" required>
                                 <option value="">DD</option>
                             </select>
-                            <select class="input-month">
+                            <select class="input-month" required>
                                 <option value="">MM</option>
                             </select>
-                            <select class="input-year">
+                            <select class="input-year" required>
                                 <option value="">YYYY</option>
                             </select>
                         </div>
@@ -734,24 +754,30 @@
                 </div>
                 <div class="form-cont">
                     <div class="input-cont">
-                        <label class="input-label">Month</label>
-                        <input type="month" class="form-tb-month">
+                        <label class="input-label" >Month</label>
+                        <input type="month" class="form-tb-month" required>
                     </div>
                     <!-- Week Input Type -->
                     <div class="input-cont">
                         <label class="input-label">Week</label>
-                        <input type="week" class="form-tb-week">
+                        <input type="week" class="form-tb-week" required>
                     </div>
                     <div class="input-cont">
                         <label class="input-label">Time</label>
-                        <input type="time" class="form-tb-time">
+                        <input type="time" class="form-tb-time" required>
                     </div>
                     <!-- Date Time Input Type -->
                     <div class="input-cont">
                         <label class="input-label">Datetime-Local</label>
-                        <input type="datetime-local" class="form-tb-date-time">
+                        <input type="datetime-local" class="form-tb-date-time" required>
                     </div>
 
+                </div>
+                <div class="form-cont">
+                    <div class="input-cont">
+                        <input type="submit" class="form-btn-submit">
+
+                    </div>
                 </div>
             </form>
         </div>
@@ -785,23 +811,23 @@
                             <span class="code-html">&lt;input</span> <span class="code-attr">type</span>=<span class="code-value">"hidden"</span> <span class="code-attr">class</span>=<span class="code-value">"input-full-date"</span> <span class="code-attr">name</span>=<span class="code-value">"full_date"</span><span class="code-html">&gt;</span>
                         <span class="code-html">&lt;/div&gt;</span>
                     <span class="code-html">&lt;/div&gt;</span>
-            
+
                     <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"form-cont"</span><span class="code-html">&gt;</span>
                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-cont"</span><span class="code-html">&gt;</span>
                             <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-label"</span><span class="code-html">&gt;</span>Month<span class="code-html">&lt;/label&gt;</span>
                             <span class="code-html">&lt;input</span> <span class="code-attr">type</span>=<span class="code-value">"month"</span> <span class="code-attr">class</span>=<span class="code-value">"form-tb-month"</span><span class="code-html">&gt;</span>
                         <span class="code-html">&lt;/div&gt;</span>
-            
+
                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-cont"</span><span class="code-html">&gt;</span>
                             <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-label"</span><span class="code-html">&gt;</span>Week<span class="code-html">&lt;/label&gt;</span>
                             <span class="code-html">&lt;input</span> <span class="code-attr">type</span>=<span class="code-value">"week"</span> <span class="code-attr">class</span>=<span class="code-value">"form-tb-week"</span><span class="code-html">&gt;</span>
                         <span class="code-html">&lt;/div&gt;</span>
-            
+
                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-cont"</span><span class="code-html">&gt;</span>
                             <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-label"</span><span class="code-html">&gt;</span>Time<span class="code-html">&lt;/label&gt;</span>
                             <span class="code-html">&lt;input</span> <span class="code-attr">type</span>=<span class="code-value">"time"</span> <span class="code-attr">class</span>=<span class="code-value">"form-tb-time"</span><span class="code-html">&gt;</span>
                         <span class="code-html">&lt;/div&gt;</span>
-            
+
                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-cont"</span><span class="code-html">&gt;</span>
                             <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-label"</span><span class="code-html">&gt;</span>Datetime-Local<span class="code-html">&lt;/label&gt;</span>
                             <span class="code-html">&lt;input</span> <span class="code-attr">type</span>=<span class="code-value">"datetime-local"</span> <span class="code-attr">class</span>=<span class="code-value">"form-tb-date-time"</span><span class="code-html">&gt;</span>
@@ -833,6 +859,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-cont">
+                    <div class="input-cont">
+                        <input type="submit" class="form-btn-submit">
+                    </div>
+                </div>
             </form>
         </div>
     </div>
@@ -845,12 +876,12 @@
             <pre><code class="codeBlock">
                 <span class="code-html">&lt;form</span> <span class="code-attr">action</span>=<span class="code-value">""</span> <span class="code-attr">class</span>=<span class="code-value">"form"</span><span class="code-html">&gt;</span>
                     <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"form-cont"</span><span class="code-html">&gt;</span>
-                    
+
                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-cont"</span><span class="code-html">&gt;</span>
                             <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-label"</span><span class="code-html">&gt;</span>Email<span class="code-html">&lt;/label&gt;</span>
                             <span class="code-html">&lt;input</span> <span class="code-attr">type</span>=<span class="code-value">"email"</span> <span class="code-attr">class</span>=<span class="code-value">"form-tb-email"</span> <span class="code-attr">placeholder</span>=<span class="code-value">"Sample placeholder"</span> <span class="code-attr">required</span><span class="code-html">&gt;</span>
                         <span class="code-html">&lt;/div&gt;</span>
-            
+
                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-cont"</span><span class="code-html">&gt;</span>
                             <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-label"</span><span class="code-html">&gt;</span>Search<span class="code-html">&lt;/label&gt;</span>
                             <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-wrapper"</span><span class="code-html">&gt;</span>
@@ -858,7 +889,7 @@
                                 <span class="code-html">&lt;input</span> <span class="code-attr">type</span>=<span class="code-value">"search"</span> <span class="code-attr">class</span>=<span class="code-value">"form-tb-search"</span> <span class="code-attr">placeholder</span>=<span class="code-value">"Sample placeholder"</span><span class="code-html">&gt;</span>
                             <span class="code-html">&lt;/div&gt;</span>
                         <span class="code-html">&lt;/div&gt;</span>
-            
+
                     <span class="code-html">&lt;/div&gt;</span>
                 <span class="code-html">&lt;/form&gt;</span>
             </code></pre>
@@ -888,63 +919,10 @@
                         <p class="show-pass-text">Show Password</p>
                     </label>
                 </div>
-            </form>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="code-style">
-            <div class="copy-btn-cont">
-                <i class="bi bi-clipboard copyButton"> Copy</i>
-            </div>
-            <pre><code class="codeBlock">
-                <span class="code-html">&lt;form</span> <span class="code-attr">action</span>=<span class="code-value">""</span> <span class="code-attr">class</span>=<span class="code-value">"form"</span><span class="code-html">&gt;</span>
-                    <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"form-cont"</span><span class="code-html">&gt;</span>
-            
-                        <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-cont"</span><span class="code-html">&gt;</span>
-                            <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-label"</span><span class="code-html">&gt;</span>Password<span class="code-html">&lt;/label&gt;</span>
-                            <span class="code-html">&lt;input</span> 
-                                <span class="code-attr">type</span>=<span class="code-value">"password"</span> 
-                                <span class="code-attr">class</span>=<span class="code-value">"form-tb-password"</span> 
-                                <span class="code-attr">placeholder</span>=<span class="code-value">"Sample placeholder"</span> 
-                                <span class="code-attr">required</span><span class="code-html">&gt;</span>
-                        <span class="code-html">&lt;/div&gt;</span>
-            
-                        <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-cont"</span><span class="code-html">&gt;</span>
-                            <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-label"</span><span class="code-html">&gt;</span>Confirm Password<span class="code-html">&lt;/label&gt;</span>
-                            <span class="code-html">&lt;input</span> 
-                                <span class="code-attr">type</span>=<span class="code-value">"password"</span> 
-                                <span class="code-attr">class</span>=<span class="code-value">"form-tb-confirm-password"</span> 
-                                <span class="code-attr">placeholder</span>=<span class="code-value">"Sample placeholder"</span> 
-                                <span class="code-attr">required</span><span class="code-html">&gt;</span>
-                        <span class="code-html">&lt;/div&gt;</span>
-            
-                    <span class="code-html">&lt;/div&gt;</span>
-            
-                    <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"form-cont"</span><span class="code-html">&gt;</span>
-                        <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-cb-label"</span><span class="code-html">&gt;</span>
-                            <span class="code-html">&lt;input</span> <span class="code-attr">type</span>=<span class="code-value">"checkbox"</span> <span class="code-attr">class</span>=<span class="code-value">"form-tb-show-password"</span><span class="code-html">&gt;</span>
-                            <span class="code-html">&lt;p</span> <span class="code-attr">class</span>=<span class="code-value">"show-pass-text"</span><span class="code-html">&gt;</span>Show Password<span class="code-html">&lt;/p&gt;</span>
-                        <span class="code-html">&lt;/label&gt;</span>
-                    <span class="code-html">&lt;/div&gt;</span>
-            
-                <span class="code-html">&lt;/form&gt;</span>
-            </code></pre>
-
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="style-exp">
-            <form action="" class="form">
                 <div class="form-cont">
                     <div class="input-cont">
-                        <label class="input-label">File</label>
-                        <input type="file" class="form-tb-file" name="file[]" multiple>
-                    </div>
-                    <div class="input-file-list-cont">
-                        <label class="input-label">List of Uploaded File</label>
-                        <ul class="form-tb-list"></ul>
+                        <input type="submit" class="form-btn-submit">
+
                     </div>
                 </div>
             </form>
@@ -959,22 +937,87 @@
             <pre><code class="codeBlock">
                 <span class="code-html">&lt;form</span> <span class="code-attr">action</span>=<span class="code-value">""</span> <span class="code-attr">class</span>=<span class="code-value">"form"</span><span class="code-html">&gt;</span>
                     <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"form-cont"</span><span class="code-html">&gt;</span>
-            
+
+                        <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-cont"</span><span class="code-html">&gt;</span>
+                            <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-label"</span><span class="code-html">&gt;</span>Password<span class="code-html">&lt;/label&gt;</span>
+                            <span class="code-html">&lt;input</span>
+                                <span class="code-attr">type</span>=<span class="code-value">"password"</span>
+                                <span class="code-attr">class</span>=<span class="code-value">"form-tb-password"</span>
+                                <span class="code-attr">placeholder</span>=<span class="code-value">"Sample placeholder"</span>
+                                <span class="code-attr">required</span><span class="code-html">&gt;</span>
+                        <span class="code-html">&lt;/div&gt;</span>
+
+                        <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-cont"</span><span class="code-html">&gt;</span>
+                            <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-label"</span><span class="code-html">&gt;</span>Confirm Password<span class="code-html">&lt;/label&gt;</span>
+                            <span class="code-html">&lt;input</span>
+                                <span class="code-attr">type</span>=<span class="code-value">"password"</span>
+                                <span class="code-attr">class</span>=<span class="code-value">"form-tb-confirm-password"</span>
+                                <span class="code-attr">placeholder</span>=<span class="code-value">"Sample placeholder"</span>
+                                <span class="code-attr">required</span><span class="code-html">&gt;</span>
+                        <span class="code-html">&lt;/div&gt;</span>
+
+                    <span class="code-html">&lt;/div&gt;</span>
+
+                    <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"form-cont"</span><span class="code-html">&gt;</span>
+                        <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-cb-label"</span><span class="code-html">&gt;</span>
+                            <span class="code-html">&lt;input</span> <span class="code-attr">type</span>=<span class="code-value">"checkbox"</span> <span class="code-attr">class</span>=<span class="code-value">"form-tb-show-password"</span><span class="code-html">&gt;</span>
+                            <span class="code-html">&lt;p</span> <span class="code-attr">class</span>=<span class="code-value">"show-pass-text"</span><span class="code-html">&gt;</span>Show Password<span class="code-html">&lt;/p&gt;</span>
+                        <span class="code-html">&lt;/label&gt;</span>
+                    <span class="code-html">&lt;/div&gt;</span>
+
+                <span class="code-html">&lt;/form&gt;</span>
+            </code></pre>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="style-exp">
+            <form action="" class="form">
+                <div class="form-cont">
+                    <div class="input-cont">
+                        <label class="input-label">File</label>
+                        <input type="file" class="form-tb-file" name="file[]" multiple required>
+                    </div>
+                    <div class="input-file-list-cont">
+                        <label class="input-label">List of Uploaded File</label>
+                        <ul class="form-tb-list"></ul>
+                    </div>
+                </div>
+                <div class="form-cont">
+                    <div class="input-cont">
+                        <input type="submit" class="form-btn-submit">
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="code-style">
+            <div class="copy-btn-cont">
+                <i class="bi bi-clipboard copyButton"> Copy</i>
+            </div>
+            <pre><code class="codeBlock">
+                <span class="code-html">&lt;form</span> <span class="code-attr">action</span>=<span class="code-value">""</span> <span class="code-attr">class</span>=<span class="code-value">"form"</span><span class="code-html">&gt;</span>
+                    <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"form-cont"</span><span class="code-html">&gt;</span>
+
                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-cont"</span><span class="code-html">&gt;</span>
                             <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-label"</span><span class="code-html">&gt;</span>File<span class="code-html">&lt;/label&gt;</span>
-                            <span class="code-html">&lt;input</span> 
-                                <span class="code-attr">type</span>=<span class="code-value">"file"</span> 
-                                <span class="code-attr">class</span>=<span class="code-value">"form-tb-file"</span> 
-                                <span class="code-attr">name</span>=<span class="code-value">"file[]"</span> 
+                            <span class="code-html">&lt;input</span>
+                                <span class="code-attr">type</span>=<span class="code-value">"file"</span>
+                                <span class="code-attr">class</span>=<span class="code-value">"form-tb-file"</span>
+                                <span class="code-attr">name</span>=<span class="code-value">"file[]"</span>
                                 <span class="code-attr">multiple</span><span class="code-html">&gt;</span>
                         <span class="code-html">&lt;/div&gt;</span>
-            
-                        <span class="code-html">&lt;div</span> 
+
+                        <span class="code-html">&lt;div</span>
                             <span class="code-attr">class</span>=<span class="code-value">"input-file-list-cont"</span> <span class="code-html">&gt;</span>
                             <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-label"</span><span class="code-html">&gt;</span>List of Uploaded File<span class="code-html">&lt;/label&gt;</span>
                             <span class="code-html">&lt;ul</span> <span class="code-attr">class</span>=<span class="code-value">"form-tb-list"</span><span class="code-html">&gt;&lt;/ul&gt;</span>
                         <span class="code-html">&lt;/div&gt;</span>
-            
+
                     <span class="code-html">&lt;/div&gt;</span>
                 <span class="code-html">&lt;/form&gt;</span>
             </code></pre>
@@ -990,6 +1033,12 @@
                         Checkbox
                     </label>
                 </div>
+                <div class="form-cont">
+                    <div class="input-cont">
+                        <input type="submit" class="form-btn-submit">
+
+                    </div>
+                </div>
             </form>
         </div>
     </div>
@@ -1003,9 +1052,9 @@
                 <span class="code-html">&lt;form</span> <span class="code-attr">action</span>=<span class="code-value">""</span> <span class="code-attr">class</span>=<span class="code-value">"form"</span><span class="code-html">&gt;</span>
                     <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"form-cont"</span><span class="code-html">&gt;</span>
                         <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-cb-label"</span><span class="code-html">&gt;</span>
-                            <span class="code-html">&lt;input</span> 
-                                <span class="code-attr">type</span>=<span class="code-value">"checkbox"</span> 
-                                <span class="code-attr">class</span>=<span class="code-value">"form-checkbox"</span> 
+                            <span class="code-html">&lt;input</span>
+                                <span class="code-attr">type</span>=<span class="code-value">"checkbox"</span>
+                                <span class="code-attr">class</span>=<span class="code-value">"form-checkbox"</span>
                                 <span class="code-attr">required</span><span class="code-html">&gt;</span>
                             Checkbox
                         <span class="code-html">&lt;/label&gt;</span>
@@ -1024,7 +1073,7 @@
                         <input type="reset" class="form-btn-reset" value="Reset">
                     </div>
                     <div class="input-cont">
-                        <input type="submit" onclick="validatePhone()" class="form-btn-submit">
+                        <input type="submit" class="form-btn-submit">
 
                     </div>
                 </div>
@@ -1040,21 +1089,19 @@
             <pre><code class="codeBlock">
                 <span class="code-html">&lt;form</span> <span class="code-attr">action</span>=<span class="code-value">""</span> <span class="code-attr">class</span>=<span class="code-value">"form"</span><span class="code-html">&gt;</span>
                     <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"form-cont"</span><span class="code-html">&gt;</span>
-                    
+
                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-cont"</span><span class="code-html">&gt;</span>
-                            <span class="code-html">&lt;input</span> 
-                                <span class="code-attr">type</span>=<span class="code-value">"reset"</span> 
-                                <span class="code-attr">class</span>=<span class="code-value">"form-btn-reset"</span> 
+                            <span class="code-html">&lt;input</span>
+                                <span class="code-attr">type</span>=<span class="code-value">"reset"</span>
+                                <span class="code-attr">class</span>=<span class="code-value">"form-btn-reset"</span>
                                 <span class="code-attr">value</span>=<span class="code-value">"Reset"</span><span class="code-html">&gt;</span>
                         <span class="code-html">&lt;/div&gt;</span>
-                        
+
                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-cont"</span><span class="code-html">&gt;</span>
-                            <span class="code-html">&lt;input</span> 
-                                <span class="code-attr">type</span>=<span class="code-value">"submit"</span> 
-                                <span class="code-attr">onclick</span>=<span class="code-value">"validatePhone()"</span> 
-                                <span class="code-attr">class</span>=<span class="code-value">"form-btn-submit"</span><span class="code-html">&gt;</span>
+                            <span class="code-html">&lt;input</span>
+                                <span class="code-attr">type</span>=<span class="code-value">"submit"</span> <span class="code-attr">class</span>=<span class="code-value">"form-btn-submit"</span><span class="code-html">&gt;</span>
                         <span class="code-html">&lt;/div&gt;</span>
-                    
+
                     <span class="code-html">&lt;/div&gt;</span>
                 <span class="code-html">&lt;/form&gt;</span>
             </code></pre>
@@ -1142,34 +1189,7 @@
                         </div>
                     </div>
 
-                    <!-- Toggle Button -->
-                    <div class="toggle-cont">
-                        <label class="input-label">Toggle Button</label>
-                        <div class="toggleSwitch">
-                            <input type="radio" name="toggle" class="radio-input-off" checked>
-                            <input type="radio" name="toggle" class="radio-input-on">
-                            <div class="slide"></div>
-                            <span class="toggleText">OFF</span>
-                        </div>
-                    </div>
-                    <div class="toggle-cont">
-                        <label class="input-label">Medium Toggle Button</label>
-                        <div class="medium-toggleSwitch">
-                            <input type="radio" name="medium-toggle" class="medium-radio-input-off" checked>
-                            <input type="radio" name="medium-toggle" class="medium-radio-input-on">
-                            <div class="slide"></div>
-                            <span class="medium-toggleText">OFF</span>
-                        </div>
-                    </div>
-                    <div class="toggle-cont">
-                        <label class="input-label">Small Toggle Button</label>
-                        <div class="small-toggleSwitch">
-                            <input type="radio" name="medium-toggle" class="small-radio-input-off" checked>
-                            <input type="radio" name="medium-toggle" class="small-radio-input-on">
-                            <div class="slide"></div>
-                            <span class="small-toggleText">OFF</span>
-                        </div>
-                    </div>
+
                     <!-- Radio Button -->
                     <div class="input-cont">
                         <label class="input-label">Radio Have Others</label>
@@ -1213,6 +1233,37 @@
                             </label>
                         </div>
                     </div>
+                </div>
+                <div class="form-cont">
+                    <div class="toggle-cont">
+                        <label class="input-label">Toggle Button</label>
+                        <div class="toggleSwitch" required>
+                            <input type="radio" name="toggle1" class="radio-input-off" checked>
+                            <input type="radio" name="toggle1" class="radio-input-on">
+                            <div class="slide"></div>
+                            <span class="toggleText">OFF</span>
+                        </div>
+
+                    </div>
+                    <div class="toggle-cont">
+                        <label class="input-label">Medium Toggle Button</label>
+                        <div class="medium-toggleSwitch " required>
+                            <input type="radio" name="medium-toggle1" class="medium-radio-input-off" checked >
+                            <input type="radio" name="medium-toggle1" class="medium-radio-input-on">
+                            <div class="slide"></div>
+                            <span class="medium-toggleText">OFF</span>
+                        </div>
+                    </div>
+                    <div class="toggle-cont">
+                        <label class="input-label">Small Toggle Button</label>
+                        <div class="small-toggleSwitch" required>
+                            <input type="radio" name="small-toggle1" class="small-radio-input-off" checked>
+                            <input type="radio" name="small-toggle1" class="small-radio-input-on">
+                            <div class="slide"></div>
+                            <span class="small-toggleText">OFF</span>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="form-cont">
@@ -1387,6 +1438,7 @@
 
     <script type="module" src="script/script.js"></script>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
 
 

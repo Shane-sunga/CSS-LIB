@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bento Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f9fafb;
+      --card-bg: #ffffff;
+      --text-color: #1f2937;
+      --accent: #6366f1;
+      --radius: 20px;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: #4b5563;
+    }
+
+    /* Optional: icons (using emoji for simplicity) */
+    .icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome Back 👋</h1>
+
+  <div class="dashboard">
+    <div class="card">
+      <div class="icon">📊</div>
+      <h2>Analytics</h2>
+      <p>Track page views, clicks, and conversions in real time.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📁</div>
+      <h2>Projects</h2>
+      <p>View and manage all your ongoing projects in one place.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">💬</div>
+      <h2>Messages</h2>
+      <p>Check the latest messages and respond to inquiries.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">⚙️</div>
+      <h2>Settings</h2>
+      <p>Customize your dashboard experience and preferences.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🧑‍💼</div>
+      <h2>Team</h2>
+      <p>Manage user roles, permissions, and collaboration tools.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📅</div>
+      <h2>Calendar</h2>
+      <p>Stay organized with tasks, events, and upcoming deadlines.</p>
+    </div>
+  </div>
+
+</body>
+</html>
