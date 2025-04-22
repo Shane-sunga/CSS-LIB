@@ -12,29 +12,65 @@
 
 <body>
 
-    <div class="menu-toggle">☰</div>
-    <div class="sidebar">
-        <button class="close-btn">✖</button>
-        <h2>Sidebar</h2>
-        <a href="index.html">Dashboard</a>
-        <a href="alerts.html">Alerts</a>
-        <a href="buttons.html">Buttons</a>
-        <a href="cards.html">Cards</a>
-        <a href="containers.html">Containers</a>
-        <a href="Form.html">Forms</a>
-        <a href="loading.html">Loadings</a>
-        <a href="modal.html">Modals</a>
-        <a href="navbars.html">Navbars</a>
-        <a href="tables.html">Table</a>
-        <a href="textarea.html">Textarea</a>
+    <div class="top-navbar-sub">
+        <div class="comp-logs-container">
+          <div class="menu-toggle">☰</div>
+          <span>Top Navbar</span>
+        </div>
 
+        <div class="menu-icon">
+            <i class="bi bi-list"></i>
+        </div>
+
+        <ul class="top-nav-links-sub">
+            <li><a href="index.html">Home</a></li>
+            <li class="nav-dropdown">
+              <a href="modal.html">Modals<i class="bi bi-chevron-down"></i></a>
+              <ul class="nav-dropdown-content">
+                  <li><a href="alerts.html">Alert</a></li>
+                  <li><a href="Form.html">Form</a></li>
+                  <li><a href="label.html">Label</a></li>
+                  <li><a href="navbars.html">Navbar</a></li>
+                  <li><a href="sidebar.html">Sidebar</a></li>
+              </ul>
+          </li>
+            <li class="nav-dropdown">
+                <a href="cards.html">Cards <i class="bi bi-chevron-down"></i></a>
+                <ul class="nav-dropdown-content">
+                    <li><a href="loading.html">Loadings</a></li>
+                    <li><a href="pagination.html">Pagination</a></li>
+                    <li><a href="tables.html">Table</a></li>
+                    <li><a href="textarea.html">Texarea</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
+
+    <div class="sidebar">
+      <button class="close-btn">✖</button>
+      <h2>Sidebar</h2>
+      <a href="index.html">Dashboard</a>
+      <a href="alerts.html">Alerts</a>
+      <a href="buttons.html">Buttons</a>
+      <a href="cards.html">Cards</a>
+      <a href="containers.html">Containers</a>
+      <a href="Form.html">Forms</a>
+      <a href="loading.html">Loadings</a>
+      <a href="modal.html">Modals</a>
+      <a href="navbars.html">Navbars</a>
+      <a href="tables.html">Table</a>
+      <a href="textarea.html">Textarea</a>
+      <a href="label.html">Label</a>
+      <a href="sidebar.html">Sidebar</a>
+      <a href="pagination.html">Pagination</a>
+    </div>
+
 
     <div class="container">
         <div class="style-exp">
             <div class="toolbar">
                 <select class="font-size"></select>
-            
+
                 <select class="fontFamily">
                     <option value="Arial">Arial</option>
                     <option value="Times New Roman" style="font-family: Times New Roman !important;">Times New Roman</option>
@@ -212,9 +248,9 @@
             <pre><code class="codeBlock">
                 <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"input-tb-textarea"</span><span class="code-html">&gt;</span>
                     <span class="code-html">&lt;label</span> <span class="code-attr">class</span>=<span class="code-value">"input-label"</span><span class="code-html">&gt;</span>Text Area<span class="code-html">&lt;/label&gt;</span>
-                            <span class="code-html">&lt;textarea</span> <span class="code-attr">rows</span>=<span class="code-value">"4"</span> 
-                                   <span class="code-attr">class</span>=<span class="code-value">"form-tb-textarea"</span> 
-                                <span class="code-attr">placeholder</span>=<span class="code-value">"Sample placeholder"</span> 
+                            <span class="code-html">&lt;textarea</span> <span class="code-attr">rows</span>=<span class="code-value">"4"</span>
+                                   <span class="code-attr">class</span>=<span class="code-value">"form-tb-textarea"</span>
+                                <span class="code-attr">placeholder</span>=<span class="code-value">"Sample placeholder"</span>
                 <span class="code-html">&lt;/div&gt;</span>
             </code></pre>
         </div>

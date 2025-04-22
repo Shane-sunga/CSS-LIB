@@ -8,28 +8,65 @@
     <link rel="stylesheet" href="assets/styles.css">
 
     <style>
-        
+
         </style>
-        
+
 </head>
 
 <body>
-    <div class="menu-toggle">☰</div>
-    <div class="sidebar">
-        <button class="close-btn">✖</button>
-        <h2>Sidebar</h2>
-        <a href="index.html">Dashboard</a>
-        <a href="alerts.html">Alerts</a>
-        <a href="buttons.html">Buttons</a>
-        <a href="cards.html">Cards</a>
-        <a href="containers.html">Containers</a>
-        <a href="Form.html">Forms</a>
-        <a href="loading.html">Loadings</a>
-        <a href="modal.html">Modals</a>
-        <a href="navbars.html">Navbars</a>
-        <a href="tables.html">Table</a>
-        <a href="textarea.html">Textarea</a>
+    <div class="top-navbar-sub">
+        <div class="comp-logs-container">
+          <div class="menu-toggle">☰</div>
+          <span>Top Navbar</span>
+        </div>
+
+        <div class="menu-icon">
+            <i class="bi bi-list"></i>
+        </div>
+
+        <ul class="top-nav-links-sub">
+            <li><a href="index.html">Home</a></li>
+            <li class="nav-dropdown">
+              <a href="modal.html">Modals<i class="bi bi-chevron-down"></i></a>
+              <ul class="nav-dropdown-content">
+                  <li><a href="alerts.html">Alert</a></li>
+                  <li><a href="Form.html">Form</a></li>
+                  <li><a href="label.html">Label</a></li>
+                  <li><a href="navbars.html">Navbar</a></li>
+                  <li><a href="sidebar.html">Sidebar</a></li>
+              </ul>
+          </li>
+            <li class="nav-dropdown">
+                <a href="cards.html">Cards <i class="bi bi-chevron-down"></i></a>
+                <ul class="nav-dropdown-content">
+                    <li><a href="loading.html">Loadings</a></li>
+                    <li><a href="pagination.html">Pagination</a></li>
+                    <li><a href="tables.html">Table</a></li>
+                    <li><a href="textarea.html">Texarea</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
+
+    <div class="sidebar">
+      <button class="close-btn">✖</button>
+      <h2>Sidebar</h2>
+      <a href="index.html">Dashboard</a>
+      <a href="alerts.html">Alerts</a>
+      <a href="buttons.html">Buttons</a>
+      <a href="cards.html">Cards</a>
+      <a href="containers.html">Containers</a>
+      <a href="Form.html">Forms</a>
+      <a href="loading.html">Loadings</a>
+      <a href="modal.html">Modals</a>
+      <a href="navbars.html">Navbars</a>
+      <a href="tables.html">Table</a>
+      <a href="textarea.html">Textarea</a>
+      <a href="label.html">Label</a>
+      <a href="sidebar.html">Sidebar</a>
+      <a href="pagination.html">Pagination</a>
+    </div>
+
     <div class="container">
         <div class="style-exp">
             <button class="small-btn-alert-success">Open Small Success</button>
@@ -50,7 +87,7 @@
                     </div>
                 </div>
             </div>
-    
+
             <div class="alert-overlay small-alert-denied">
                 <div class="alert-cont-small">
                     <div class="alert-body-cont">
@@ -72,7 +109,7 @@
     </div>
 
     <div class="container">
-      
+
         <div class="code-style">
             <div class="copy-btn-cont">
                 <i class="bi bi-clipboard copyButton"> Copy</i>
@@ -80,7 +117,7 @@
             <pre><code class="codeBlock">
                 <span class="code-html">&lt;button</span> <span class="code-attr">class</span>=<span class="code-value">"small-btn-alert-success"</span><span class="code-html">&gt;</span>Open Small Success<span class="code-html">&lt;/button&gt;</span>
                 <span class="code-html">&lt;button</span> <span class="code-attr">class</span>=<span class="code-value">"small-btn-alert-denied"</span><span class="code-html">&gt;</span>Open Small Denied<span class="code-html">&lt;/button&gt;</span>
-            
+
                 <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"alert-overlay small-alert-success"</span><span class="code-html">&gt;</span>
                     <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"alert-cont-small"</span><span class="code-html">&gt;</span>
                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"alert-body-cont"</span><span class="code-html">&gt;</span>
@@ -94,7 +131,7 @@
                         <span class="code-html">&lt;/div&gt;</span>
                     <span class="code-html">&lt;/div&gt;</span>
                 <span class="code-html">&lt;/div&gt;</span>
-            
+
                 <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"alert-overlay small-alert-denied"</span><span class="code-html">&gt;</span>
                     <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"alert-cont-small"</span><span class="code-html">&gt;</span>
                         <span class="code-html">&lt;div</span> <span class="code-attr">class</span>=<span class="code-value">"alert-body-cont"</span><span class="code-html">&gt;</span>
@@ -102,7 +139,7 @@
                             <span class="code-html">&lt;circle</span> <span class="code-attr"> class</span>=<span class="code-value">"path line"</span> <span class="code-attr">fill</span>=<span class="code-value">"none"</span> <span class="code-attr">stroke</span>=<span class="code-value">"#eb0a0a"</span> <span class="code-attr">stroke-width</span>=<span class="code-value">"6"</span> <span class="code-attr">stroke-miterlimit</span>=<span class="code-value">"10"</span> <span class="code-attr">cx</span>=<span class="code-value">"65.1"</span> <span class="code-attr">cy</span>=<span class="code-value">"65.1"</span> <span class="code-attr">r</span>=<span class="code-value">"62.1"</span><span class="code-html">/&gt;</span>
                             <span class="code-html">&lt;line</span> <span class="code-attr"> class</span>=<span class="code-value">"path line"</span> <span class="code-attr">fill</span>=<span class="code-value">"none"</span> <span class="code-attr">stroke</span>=<span class="code-value">"#eb0a0a"</span> <span class="code-attr">stroke-width</span>=<span class="code-value">"6"</span> <span class="code-attr">stroke-linecap</span>=<span class="code-value">"round"</span> <span class="code-attr">stroke-miterlimit</span>=<span class="code-value">"10"</span> <span class="code-attr">x1</span>=<span class="code-value">"34.4"</span> <span class="code-attr">y1</span>=<span class="code-value">"37.9"</span> <span class="code-attr">x2</span>=<span class="code-value">"95.8"</span> <span class="code-attr">y2</span>=<span class="code-value">"92.3"</span><span class="code-html">/&gt;</span>
                             <span class="code-html">&lt;line</span> <span class="code-attr"> class</span>=<span class="code-value">"path line"</span> <span class="code-attr">fill</span>=<span class="code-value">"none"</span> <span class="code-attr">stroke</span>=<span class="code-value">"#eb0a0a"</span> <span class="code-attr">stroke-width</span>=<span class="code-value">"6"</span> <span class="code-attr">stroke-linecap</span>=<span class="code-value">"round"</span> <span class="code-attr">stroke-miterlimit</span>=<span class="code-value">"10"</span> <span class="code-attr">x1</span>=<span class="code-value">"95.8"</span> <span class="code-attr">y1</span>=<span class="code-value">"38"</span> <span class="code-attr">x2</span>=<span class="code-value">"34.4"</span> <span class="code-attr">y2</span>=<span class="code-value">"92.2"</span><span class="code-html">/&gt;</span>
-                        <span class="code-html">&lt;/svg&gt;</span>                            
+                        <span class="code-html">&lt;/svg&gt;</span>
                         <span class="code-html">&lt;h2</span> <span class="code-attr">class</span>=<span class="code-value">"alert-title"</span><span class="code-html">&gt;</span>Access Denied!!<span class="code-html">&lt;/h2&gt;</span>
                         <span class="code-html">&lt;p</span> <span class="code-attr">class</span>=<span class="code-value">"alert-desc"</span><span class="code-html">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<span class="code-html">&lt;/p&gt;</span>
                         <span class="code-html">&lt;button</span> <span class="code-attr">class</span>=<span class="code-value">"alert-confirm-btn-denied"</span><span class="code-html">&gt;</span>Gets<span class="code-html">&lt;/button&gt;</span>

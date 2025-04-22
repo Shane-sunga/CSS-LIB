@@ -18,7 +18,8 @@
 .comp-logs-container {
   display: flex;
   flex-direction: row;
-  gap: 15px;
+  align-items: center;
+  gap: 20px;
   font-weight: 600;
 }
 

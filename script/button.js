@@ -1,24 +1,4 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//     document.querySelectorAll(".loading-btn").forEach(button => {
-//         button.addEventListener("click", function () {
-//             let spinner = this.querySelector(".loading-spinner");
-//             let buttonText = this.querySelector(".loading-text-btn");
 
-//             let loadingText = this.getAttribute("data-loading");
-//             let defaultText = this.getAttribute("data-default");
-
-//             buttonText.textContent = loadingText;
-//             spinner.style.display = "inline-block";
-
-//             setTimeout(() => {
-//                 spinner.style.display = "none";
-//                 buttonText.textContent = defaultText;
-//             }, 2000);
-//         });
-//     });
-
-    
-// });
 document.addEventListener("DOMContentLoaded", function () {
     const loadingButtons = document.querySelectorAll(".loading-btn");
 
@@ -31,18 +11,18 @@ document.addEventListener("DOMContentLoaded", function () {
             const textSpan = button.querySelector(".loading-text-btn");
             const spinner = button.querySelector(".loading-spinner");
 
-           
+
             button.classList.add("loading");
             textSpan.textContent = loadingText;
-            spinner.style.display = "inline-block"; 
+            spinner.style.display = "inline-block";
 
 
             setTimeout(() => {
-                
+
                 button.classList.remove("loading");
                 textSpan.textContent = defaultText;
                 spinner.style.display = "none";
-            }, 2000); 
+            }, 2000);
         });
     });
 
@@ -87,5 +67,34 @@ document.addEventListener("DOMContentLoaded", function () {
         nextBtn.addEventListener('click', () => changeStep(1));
 
         updateSteps();
+    });
+
+    const backToTopBtn = document.querySelector(".back-to-top");
+
+    window.addEventListener("scroll", () => {
+      if (
+        window.scrollY > 20 &&
+        !backToTopBtn.classList.contains("animate")
+      ) {
+        backToTopBtn.style.display = "flex";
+      } else if (!backToTopBtn.classList.contains("animate")) {
+        backToTopBtn.style.display = "none";
+      }
+    });
+
+    backToTopBtn.addEventListener("click", () => {
+      backToTopBtn.classList.add("animate");
+
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }, 100);
+
+      setTimeout(() => {
+        backToTopBtn.classList.remove("animate");
+        backToTopBtn.style.display = "none";
+      }, 1250);
     });
 });
