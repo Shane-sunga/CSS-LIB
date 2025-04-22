@@ -4,9 +4,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(20, 20, 20, 0.4);
-    -webkit-backdrop-filter: blur(16px);
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(1px);
+    background-color: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(20, 20, 20, 0.2);
     display: none;
     justify-content: center;
@@ -65,11 +64,109 @@
 
 }
 
+.slidemodal-left {
+    position: fixed;
+    top: 0;
+    left: 0; /* Final position */
+    width: 400px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+    transform: translateX(100vw); /* Start completely off-screen to the right */
+    transition: transform 0.6s ease-in-out;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.slidemodal-left.open {
+    transform: translateX(0); /* Slide in to the left */
+}
+
+.blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(1px);
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.blur-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.okay-m-btn{
+    border: #008000 solid 2px;
+    color: #008000;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.close-m-btn{
+    border: #0077B6 solid 2px;
+    color: #0077B6;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.close-m-btn{
+    width: 4.5rem;
+    height: 2.5rem;
+    padding: 5px;
+    border: solid 2px #0077B6;
+    color: #0077B6;
+    background-color: white;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+}
+
+.close-m-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    scale: 0;
+    z-index: -1;
+    background-color: #0077B6;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.close-m-btn:hover::before {
+    scale: 3;
+}
+
+.close-m-btn:hover {
+    color: #ffffff;
+    scale: 1.1;
+    box-shadow: 0 0px 5px rgba(0,119, 182, 0.4);
+}
+
+.close-m-btn-success:active {
+    scale: 1;
+}
+
 .close-btn-small,
 .close-btn-medium,
 .close-btn-large,
 .close-btn-left,
-.close-btn-right {
+.close-btn-right,
+.slide-close-btn {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -83,7 +180,10 @@
 .medium-btn-modal,
 .large-btn-modal,
 .halfLeft-btn-modal,
+
 .halfRight-btn-modal,
+.modal-btn,
+.slideLeft-btn-modal,
 .md-btn {
     width: 100%;
     height: 45px;
@@ -95,6 +195,14 @@
     border: none;
     cursor: pointer;
     text-align: center;
+}
+
+.modal-content{
+    width: 100%;
+    height: 95%;
+    background-color: #ebe9e9;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .modal-header-cont {
@@ -136,11 +244,12 @@
 
 .modal-cont-medium .modal-footer-cont button {
     width: 30%;
-    font-size: 12px;
+    font-size: 14px;
     padding: 5px;
     height: 35px;
     margin-bottom: 5px;
 }
+
 
 .modal-footer-cont {
     padding: 10px 0;
@@ -149,9 +258,9 @@
     right: 20px;
     margin-top: 5px;
     display: flex;
+    border-top: 1px solid #eaeaea;
     justify-content: right;
     align-items: center;
-    height: 22%;
     gap: 10px;
     width: 94%;
 }
@@ -275,51 +384,4 @@
     font-size: 2rem;
     margin-top: 10px;
     color: #646363;
-}
-
-.alert-confirm-btn {
-    width: 4.5rem;
-    height: 2.5rem;
-    padding: 5px;
-    border-radius: 8px;
-    border: solid 2px #008000;
-    color: #008000;
-    font-size: 1rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin-top: 10px;
-    background-color: white;
-    background-color: transparent;
-    font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
-    overflow: hidden;
-}
-
-.alert-confirm-btn::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    scale: 0;
-    z-index: -1;
-    background-color: #008000;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-.alert-confirm-btn:hover::before {
-    scale: 3;
-}
-
-.alert-confirm-btn:hover {
-    color: #ffffff;
-    scale: 1.1;
-    box-shadow: 0 0px 5px rgba(47, 255, 20, 0.4);
-}
-
-.alert-confirm-btn:active {
-    scale: 1;
 }

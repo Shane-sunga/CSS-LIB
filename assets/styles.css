@@ -223,22 +223,7 @@ body{
 .form-tb-date-time,
 .form-tb-file,
 .input-group,
-.modal-tb-text,
-.modal-tb-text-number,
-.modal-tb-number,
-.modal-tb-date,
-.modal-tb-email,
-.modal-tb-password,
-.modal-tb-select,
-.modal-tb-middleName,
-.form-tb-text-Capitalize,
-.modal-tb-middleInitial,
-.modal-tb-contNumber,
-.modal-tb-zipCode,
-.modal-tb-confirmPassword,
-.modal-selectCountry,
-.modal-zipCode,
-.modal-input-group {
+.form-tb-text-Capitalize {
   flex: 1 1 calc(20% - 10px);
   margin: 0 5px 0 5px;
   padding: 10px;
@@ -543,9 +528,7 @@ display: none;
 
 .input-cont,
 .input-cont-drop,
-.form-container,
-.modal-input-cont,
-.modal-other-cont {
+.form-container {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -626,9 +609,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* Style for confirm password */
 .form-tb-confirm-password::-ms-reveal,
-.modal-tb-confirmPassword::-ms-reveal,
-.form-tb-confirm-password::-ms-clear,
-.modal-tb-confirmPassword::-ms-clear {
+.form-tb-confirm-password::-ms-clear {
   display: none;
 }
 
@@ -685,8 +666,7 @@ font-size: 10px;
   align-items: start;
 }
 
-.form-checkbox,
-.modal-checkbox {
+.form-checkbox{
   --primary-color: #1677ff;
   --secondary-color: #fff;
   --primary-hover-color: #4096ff;
@@ -706,16 +686,8 @@ font-size: 10px;
   box-sizing: border-box;
 }
 
-.modal-checkbox,
-.modal-checkbox *,
-.modal-checkbox *::before,
-.modal-checkbox *::after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
 
-.form-checkbox,
-.modal-checkbox {
+.form-checkbox {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -731,8 +703,7 @@ font-size: 10px;
   position: relative;
 }
 
-.form-checkbox::after,
-.modal-checkbox::after {
+.form-checkbox::after{
   content: "";
   position: absolute;
   top: 0;
@@ -748,8 +719,7 @@ font-size: 10px;
   transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
 }
 
-.form-checkbox::before,
-.modal-checkbox::before {
+.form-checkbox::before {
   top: 40%;
   left: 50%;
   content: "";
@@ -768,19 +738,16 @@ font-size: 10px;
   transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s;
 }
 
-.form-checkbox:hover,
-.modal-checkbox:hover {
+.form-checkbox:hover {
   border-color: var(--primary-color);
 }
 
-.form-checkbox:checked,
-.modal-checkbox:checked {
+.form-checkbox:checked {
   background: var(--primary-color);
   border-color: transparent;
 }
 
-.form-checkbox:checked::before,
-.modal-checkbox:checked::before {
+.form-checkbox:checked::before {
   opacity: 1;
   -webkit-transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
   -ms-transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
@@ -790,8 +757,7 @@ font-size: 10px;
   transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
 }
 
-.form-checkbox:active:not(:checked)::after,
-.modal-checkbox:active:not(:checked)::after {
+.form-checkbox:active:not(:checked)::after {
   -webkit-transition: none;
   -o-transition: none;
   -webkit-box-shadow: none;
@@ -801,12 +767,7 @@ font-size: 10px;
   opacity: 1;
 }
 
-.modal-checkbox-label {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .form-tb-show-password {
   width: 30px;
@@ -815,32 +776,7 @@ font-size: 10px;
   --checkbox-size: 21px;
 }
 
-.modal-tb-show-password {
-  width: 30px;
-  height: 20px;
-  margin-left: 4px;
-  --checkbox-size: 21px;
-}
 
-.modal-tb-checkbox {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  height: 30px;
-  gap: 10px;
-  margin-bottom: 10px;
-  font-weight: 500;
-  width: 100%;
-}
-
-.modal-tb-checkbox label {
-  text-align: left;
-}
-
-.modal-tb-checkbox input[type="checkbox"] {
-  margin-right: 5px;
-}
 
 .show-pass-text {
   text-align: center;
@@ -854,16 +790,14 @@ font-size: 10px;
   gap: 10px;
 }
 
-.input-tb-textarea,
-.modal-tb-textarea {
+.input-tb-textarea{
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.form-tb-textarea,
-.modal-tb-textarea {
+.form-tb-textarea {
   width: 100%;
   padding: 10px;
   font-size: 16px;
@@ -882,8 +816,6 @@ font-size: 10px;
 
 /* Style for Buttons */
 .form-btn-submit,
-.modal-btn-submit,
-.modal-btn,
 .form-btn-button,
 .form-btn-reset,
 .md-btn {
@@ -901,8 +833,6 @@ font-size: 10px;
 }
 
 .form-btn-submit:hover,
-.modal-btn-submit:hover,
-.modal-btn:hover,
 .form-btn-button:hover,
 .form-btn-reset:hover {
   background-color: #66a3c9;
@@ -930,15 +860,6 @@ font-size: 10px;
   }
 }
 
-@media (max-width: 1000px) {
-  .modal .radioContainer {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-  }
-}
 
 @media (min-width: 1000px) {
   .radio-cont {
@@ -949,9 +870,7 @@ font-size: 10px;
     align-items: center;
   }
 
-  .modal .radioContainer {
-    grid-template-columns: repeat(5, 1fr);
-  }
+
 }
 
 @media (max-width: 900px) {
@@ -961,17 +880,10 @@ font-size: 10px;
     gap: 8px;
   }
 
-  .modal .radioContainer {
-    grid-template-columns: repeat(4, 1fr);
-  }
+
 }
 
 
-@media (max-width: 790px) {
-  .modal .radioContainer {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 
 @media (max-width: 768px) {
 
@@ -1014,24 +926,6 @@ font-size: 10px;
     flex-wrap: wrap;
     margin-left: 20px;
   }
-
-  .modal .radioContainer {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .modal .modal-cont {
-    margin: 2px;
-    padding: 6px;
-    font-size: 12px;
-  }
-
-  .modal .radioContainer {
-    margin: 0;
-  }
-
-  .modal .radioContainer .radio-label {
-    font-size: 10px;
-  }
 }
 
 @media (max-width: 600px) {
@@ -1049,39 +943,7 @@ font-size: 10px;
     gap: 8px;
   }
 
-  .modal .modal-cont {
-    width: 90%;
-    padding: 4%;
-    font-size: 12px;
-  }
 
-  .modal .modal-form {
-    padding: 10px;
-  }
-
-  .modal-cont label {
-    font-size: 12px;
-  }
-
-  .modal-cont ::placeholder {
-    font-size: 12px;
-  }
-
-  .modal label,
-  .modal span,
-  .modal select,
-  .modal p {
-    font-size: 12px;
-    margin: 0;
-  }
-
-  .modal .form-tb-select:focus {
-    width: fit-content;
-  }
-
-  .modal .form-tb-select {
-    width: fit-content;
-  }
 
   #checkbox-label {
     font-size: 12px;
@@ -1145,21 +1007,7 @@ font-size: 10px;
   }
 }
 
-@media (max-width: 300px) {
-  .modal .form-tb {
-    margin: 2px;
-    padding: 6px;
-    font-size: 12px;
-  }
 
-  .modal .radioContainer {
-    margin: 0;
-  }
-
-  .modal .radioContainer .radio-label {
-    font-size: 10px;
-  }
-}
 
 /* Sidebar Style */
 .sidebar {

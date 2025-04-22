@@ -1,22 +1,45 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // "Script for modal"
-    const modalButton = document.querySelector(".modal-btn");
-    const modal = document.querySelector(".modal");
-    const closeButton = document.querySelector(".close");
+    // Regular modals
+    document.querySelectorAll(".modal-btn").forEach((modalButton, index) => {
+        const modal = document.querySelectorAll(".modal")[index];
+        const closeButton = modal.querySelector(".close");
 
-    modal.style.display = "none";
+        modal.style.display = "none";
 
-    modalButton.addEventListener("click", function (event) {
-        event.preventDefault();
-        document.body.style.overflow = "hidden";
-        modal.style.display = "flex";
+        modalButton.addEventListener("click", function (event) {
+            event.preventDefault();
+            document.body.style.overflow = "hidden";
+            modal.style.display = "flex";
+        });
+
+        closeButton.addEventListener("click", function () {
+            modal.style.display = "none";
+            document.body.style.overflow = "";
+        });
     });
 
-    closeButton.addEventListener("click", function () {
-        modal.style.display = "none";
+   // Slide modals
+document.querySelectorAll(".slideLeft-btn-modal").forEach((leftSlideBtn, index) => {
+    const slideModal = document.querySelectorAll(".slidemodal-left")[index];
+    const closeSlideBtn = slideModal.querySelector(".slide-close-btn");
+    const blurOverlay = document.querySelectorAll(".blur-overlay")[index];
+
+    leftSlideBtn.addEventListener("click", () => {
+        slideModal.classList.add("open");
+        blurOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+    });
+
+    closeSlideBtn.addEventListener("click", () => {
+        slideModal.classList.remove("open");
+        blurOverlay.classList.remove("active");
         document.body.style.overflow = "";
     });
+
 });
+
+});
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
