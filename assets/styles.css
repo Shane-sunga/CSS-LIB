@@ -21,12 +21,12 @@
   box-sizing: border-box;
 }
 
-body{
+/* body{
   background-image: linear-gradient(0deg, #6fdcf5 0%, #ffffff 100%);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-}
+} */
 
 /* Form Style */
 
@@ -187,6 +187,29 @@ body{
 .zip-input {
   border: none !important;
   background-color: transparent;
+}
+
+.red-form-tb-text,
+.red-form-tb-email,
+.red-form-tb-number{
+  color: red;
+  border: 2px solid red;
+  flex: 1 1 calc(20% - 10px);
+  margin: 0 5px 0 5px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 14px;
+  box-sizing: border-box;
+  outline-color: red;
+  background-color: white;
+  align-content: center;
+  min-height: 50px;
+}
+.red-form-tb-text::placeholder,
+.red-form-tb-email::placeholder,
+.red-form-tb-number::placeholder{
+  color: red;
+
 }
 
 
@@ -534,7 +557,12 @@ display: none;
   flex-direction: column;
 }
 
+.red-input-label{
+  color: red;
+}
+
 .input-label,
+.red-input-label,
 .input-label-error,
 .input-label-required,
 .input-cb-label {

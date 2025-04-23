@@ -1,14 +1,12 @@
 .table-cont {
     width: 100%;
     overflow-x: auto;
-    padding: 10px 10px;
     /* Enables horizontal scrolling */
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
     font-size: 16px;
     font-family: "Poppins";
 }
@@ -173,3 +171,6 @@ table {
     background-position: center;
     background-size: 75% 70%;
 }
+
+/* PAGINATION */
+

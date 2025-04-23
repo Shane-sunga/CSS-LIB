@@ -97,3 +97,43 @@ const data = [];
     createPage("›", page + 1, false, page === pageCount);
   }
   displayTable(currentPage);
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    function closeAllDropdowns() {
+      document.querySelectorAll('.header-dropdown-content').forEach(dropdown => {
+        dropdown.classList.remove('drop-show');
+      });
+      document.querySelectorAll('.dropbtn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    // Toggle dropdown on button click
+    document.querySelectorAll('.dropbtn').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const dropdownContent = button.nextElementSibling;
+        const isShown = dropdownContent.classList.contains('drop-show');
+
+        closeAllDropdowns();
+
+        if (!isShown) {
+          dropdownContent.classList.add('drop-show');
+          button.classList.add('active');
+          button.setAttribute('aria-expanded', 'true');
+        } else {
+          dropdownContent.classList.remove('drop-show');
+          button.classList.remove('active');
+          button.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    // Close dropdown if clicked outside
+    window.addEventListener('click', (e) => {
+      if (!e.target.matches('.dropbtn') && !e.target.closest('.header-dropdown-content')) {
+        closeAllDropdowns();
+      }
+    });
+  });

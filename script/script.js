@@ -10,7 +10,7 @@ import "./textarea.js";
 import "./navbar.js";
 import "./container.js";
 import "./pagination.js";
-
+import "./dashboard.js"
 
 
 function loadScript(scriptName) {
@@ -24,9 +24,7 @@ function loadScript(scriptName) {
 }
 
 const scripts = [
-    "textbox", "sidebar", "dropdown", "date-time" , "modal", "pagination",
+    "textbox", "sidebar", "dashboard", "dropdown", "date-time" , "modal", "pagination",
     "radio-toggle", "textarea", "alerts", "button", "navbar", "container"];
 
 scripts.forEach(script => loadScript(script));
-
-
