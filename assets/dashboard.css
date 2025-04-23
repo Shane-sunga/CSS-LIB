@@ -1,0 +1,413 @@
+.body-color {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+/*Chart css*/
+.chart-content {
+  width: 100%;
+  box-sizing: border-box;
+  padding-right: 10px;
+}
+.chart-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  margin-right: 2%;
+}
+.chart-wrapper {
+  flex: 1 1 300px;
+  min-width: 300px;
+  max-width: 100%;
+  height: 300px;
+}
+
+@media (max-width: 768px) {
+  .chart-wrapper {
+    width: 100%;
+    height: 250px;
+  }
+}
+.chart-canvas,
+.area-chart {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.piechart {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.slice {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  background: conic-gradient(var(--c) calc(var(--p) * 1%), #0000 0);
+}
+.content-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+@media (max-width: 340px) {
+  .chart-wrapper {
+    height: 200px;
+  }
+
+  .chart-canvas,
+  .area-chart {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+@media (max-width: 250px) {
+  .chart-wrapper {
+    height: 180px;
+  }
+
+  .chart-canvas,
+  .area-chart {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+@media (max-width: 190px) {
+  .chart-wrapper {
+    height: 150px;
+  }
+
+  .chart-canvas,
+  .area-chart {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+@media (max-width: 340px) {
+  .chart-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.text-section {
+  flex: 1;
+  min-width: 250px;
+}
+/*Clock css*/
+.clock-section {
+  position: absolute;
+  min-width: 100%;
+  right: 2px;
+  display: flex;
+  justify-content: right;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 340px) {
+  .clock-section {
+    min-width: 100%;
+    right: 4px;
+    margin-right: 4px;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+@media screen and (max-width: 500px) {
+  .clock-section {
+    min-width: 100%;
+    right: 4px;
+    margin-right: 4px;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+@media screen and (max-width: 200px) {
+  .clock-section {
+    min-width: 100%;
+    right: 4px;
+    margin-right: 4px;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
+.clock {
+  font-size: 1.5rem;
+}
+.clock-box {
+  max-width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .clock {
+    font-size: 1rem;
+  }
+
+  .clock-section {
+    justify-content: center;
+    margin-right: 0;
+  }
+
+  .clock-label {
+    font-size: 0.9rem;
+  }
+}
+/* Table css */
+.flex-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-right: 4%;
+}
+.table-container {
+  width: 60%;
+  min-width: 300px;
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.table-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-section th,
+.table-section td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.table-section th {
+  background-color: #f2f2f2;
+}
+
+.table-section tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Buttons */
+.table-btn {
+  padding: 6px 12px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.table-btn.delete:hover {
+  background-color: #cd1e1a;
+}
+
+.table-colorlib-table {
+  min-width: 600px;
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.colorlib-table thead {
+  background-color: #f5f5f5;
+}
+
+.colorlib-table th,
+.colorlib-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.colorlib-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.9em;
+}
+
+.status.active {
+  background-color: #28a745;
+}
+
+.status.pending {
+  background-color: #ffc107;
+}
+
+@media (max-width: 691px) {
+  .table-container {
+    overflow-x: auto;
+  }
+
+  .colorlib-table {
+    font-size: 12px;
+    min-width: 600px;
+  }
+
+  .colorlib-table th,
+  .colorlib-table td {
+    padding: 8px 10px;
+    white-space: nowrap;
+  }
+
+  .status {
+    font-size: 0.75em;
+    padding: 3px 8px;
+  }
+
+  .table-btn {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
+
+/*Calendar css*/
+.calendar {
+  margin-top: 40px;
+  width: 35%;
+  min-width: 250px;
+  max-height: 300px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.calendar-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.calendar-header button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #3a5a8d;
+}
+.calendar-days,
+.calendar-dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+
+.calendar-days div {
+  padding: 6px 0;
+  font-weight: 600;
+  color: #777;
+  font-size: 14px;
+}
+
+.calendar-dates {
+  flex-grow: 1;
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.calendar-dates div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #333;
+}
+
+.calendar-dates div span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+.calendar-dates div span.today {
+  background: #3a5a8d;
+  color: white;
+  border-radius: 50%;
+  font-weight: 600;
+}
+
+.prev,
+.next {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bolder;
+  color: #3a5a8d;
+}
+@media (max-width: 900px) {
+  .flex-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .table-container,
+  .calendar {
+    width: 100%;
+  }
+
+  .calendar {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .calendar {
+    font-size: 12px;
+    border-radius: 12px;
+  }
+
+  .calendar-header {
+    padding: 10px;
+  }
+
+  .calendar-header h2 {
+    font-size: 16px;
+  }
+
+  .calendar-header button {
+    font-size: 18px;
+  }
+
+  .calendar-days div,
+  .calendar-dates div {
+    font-size: 11px;
+  }
+
+  .calendar-dates div span {
+    width: 24px;
+    height: 24px;
+  }
+}
