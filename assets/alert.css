@@ -227,3 +227,94 @@
     text-align: center;
     margin-top: 10px;
 }
+
+
+.alert-cont-primary,
+        .alert-cont-secondary,
+        .alert-cont-success,
+        .alert-cont-danger,
+        .alert-cont-warning,
+        .alert-cont-info,
+        .alert-cont-light,
+        .alert-cont-dark {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid;
+            border-radius: 10px;
+            font-size: 12px;
+            position: relative;
+        }
+
+        .alert-cont-primary i,
+        .alert-cont-secondary i,
+        .alert-cont-success i,
+        .alert-cont-danger i,
+        .alert-cont-warning i,
+        .alert-cont-info i,
+        .alert-cont-light i,
+        .alert-cont-dark i {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+        }
+
+        .alert-cont-primary i:hover,
+        .alert-cont-secondary i:hover,
+        .alert-cont-success i:hover,
+        .alert-cont-danger i:hover,
+        .alert-cont-warning i:hover,
+        .alert-cont-info i:hover,
+        .alert-cont-light i:hover,
+        .alert-cont-dark i:hover {
+            color: #000000;
+            font-size: 14px;
+        }
+
+        .alert-cont-primary {
+            background-color: #6CA0D1;
+            color: #1D3C5E;
+            border-color: #1D3C5E;
+        }
+
+        .alert-cont-secondary {
+            background-color: #A3C9E2;
+            color: #3A5A8D;
+            border-color: #3A5A8D;
+        }
+
+        .alert-cont-success {
+            background-color: #a7f8a1;
+            color: #198754;
+            border-color: #198754;
+        }
+
+        .alert-cont-danger {
+            background-color: #FF8C8C;
+            color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        .alert-cont-warning {
+            background-color: #FFF38C;
+            color: #d39f03;
+            border-color: #ffc107;
+        }
+
+        .alert-cont-info {
+            background-color: #a1dfec;
+            color: #1D3C5E;
+            border-color: #1D3C5E;
+        }
+
+        .alert-cont-light {
+            background-color: #bebebe;
+            color: #535353;
+            border-color: #535353;
+        }
+
+        .alert-cont-dark {
+            background-color: #0D2A4A;
+            color: #c5c5c5;
+            border-color: #09223b;
+        }

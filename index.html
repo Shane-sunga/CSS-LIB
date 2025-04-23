@@ -4,16 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Library Home Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+    crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/styles.css" />
     <link rel="stylesheet" href="assets/dashboard.css" />
   </head>
 
   <body>
     <div class="body-color">
+
       <div class="top-navbar-sub">
         <div class="comp-logs-container">
-          <div class="menu-toggle">☰</div>
-          <span>Top Navbar</span>
+          
         </div>
 
         <div class="menu-icon">
@@ -43,23 +45,30 @@
           </li>
         </ul>
       </div>
-      <div class="sidebar">
-        <button class="close-btn">✖</button>
-        <h2>Sidebar</h2>
-        <a href="index.html">Dashboard</a>
-        <a href="alerts.html">Alerts</a>
-        <a href="buttons.html">Buttons</a>
-        <a href="cards.html">Cards</a>
-        <a href="Form.html">Forms</a>
-        <a href="loading.html">Loadings</a>
-        <a href="modal.html">Modals</a>
-        <a href="navbars.html">Navbars</a>
-        <a href="tables.html">Table</a>
-        <a href="textarea.html">Textarea</a>
-        <a href="label.html">Label</a>
-        <a href="sidebar.html">Sidebar</a>
-        <a href="pagination.html">Pagination</a>
-      </div>
+
+      <div class="slide-sidebar">
+        <button class="slide-toggle-btn">
+            <i class="fa-solid fa-bars menu-icon"></i> <!-- Burger Icon -->
+            <i class="fa-solid fa-arrow-left back-icon"></i> <!-- Back Icon -->
+        </button>
+
+        <div class="logo">
+            <img src="dmw.png" alt="logo">
+            <h1 class="slide-sidebar-title">DMW SYSTEM</h1>
+        </div>
+
+        <ul>
+            <li><i class="fa-solid fa-house"></i> <span>Home</span></li>
+            <li><i class="fa-solid fa-user"></i> <span>Profile</span></li>
+            <li><i class="fa-solid fa-gear"></i> <span>Settings</span></li>
+            <li><i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span></li>
+
+        </ul>
+    </div>
+
+    <div class="cont-content">
+
+
 
       <div class="content">
         <div class="clock-section">
@@ -148,6 +157,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
 
     <script type="module" src="script/script.js"></script>

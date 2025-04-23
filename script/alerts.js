@@ -55,3 +55,11 @@ function closeModal(modalClass) {
         document.body.style.overflow = "";
     });
 }
+
+
+document.querySelectorAll(".form-cont i").forEach(icon => {
+    icon.addEventListener("click", function () {
+        this.parentElement.style.display = "none";
+    });
+});
+
