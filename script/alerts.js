@@ -52,7 +52,6 @@ function openModal(modalClass) {
 function closeModal(modalClass) {
     document.querySelectorAll("." + modalClass).forEach(modal => {
         modal.style.display = "none";
+        document.body.style.overflow = "";
     });
 }
-
-
