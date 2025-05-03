@@ -1,4 +1,3 @@
-
 /* Cards Style */
 @keyframes down-btn {
     0% {
@@ -618,7 +617,7 @@
 
 .card-grid-1, .card-grid-2, .card-grid-3,
 .card-grid-4, .card-grid-5, .card-grid-6,
-.card-grid-7, .card-grid-8, .card-grid-9 {
+.card-grid-7, .card-grid-8, .card-grid-9, .card-grid-12 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -675,6 +674,12 @@
   grid-row: span 2;
   background-color: #0d2a4a;
 }
+.card-grid-12 {
+    grid-row: span 5 / span 5;
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+    
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {

@@ -143,3 +143,152 @@
     flex-grow: 1;
     transition: margin-left 0.3s ease;
 }
+@media screen and (max-width: 768px) and (max-width: 600px) {
+    .slide-sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-radius: 0;
+    }
+    .slide-sidebar.collapsed {
+        width: 100%;
+    }
+    .cont-content{
+        margin-left: 0;
+    }
+    .slide-sidebar.collapsed + .cont-content{
+        margin-left: 0;
+    }
+    .slide-sidebar ul li {
+        justify-content: center;
+    }
+    
+}
+/* Sidebar Styles */
+.sidebar {
+    max-width: 250px;
+    background-color: #2C3E50; /* Darker color for a more subtle look */
+    color: white;
+    padding: 30px 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 20px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100%;
+    transition: left 0.3s ease-in-out; 
+    z-index: 2000;
+  }
+  @media screen and (max-width: 600px) {
+    .sidebar {
+      width: 30%;
+    }
+    .sidebar a {
+      font-size: 12px; 
+    } 
+    .sidebar h2{
+      font-size: 24px; 
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .sidebar {
+      width: 30%;
+    }
+    .sidebar a {
+      font-size: 8px; 
+    }
+    .sidebar h2{
+      font-size: 18px; 
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .sidebar {
+      width: 40%;
+    }
+    .sidebar a {
+      font-size: 6px;
+    }
+    .sidebar h2{
+      font-size: 16px; 
+    } 
+  }
+  @media screen and (max-width: 300px) {
+    .sidebar {
+      width: 35%;
+    } 
+    .sidebar a {
+      font-size: 6px;
+    }
+    .sidebar h2{
+      font-size: 14px; 
+    } 
+  }
+  @media screen and (min-width: 200px) {
+    .sidebar {
+      width: 35%;
+    } 
+  }
+  
+  .sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: block;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+    border-radius: 8px;
+  }
+  
+  .sidebar a:hover {
+    background-color: #34495E; /* Slightly lighter background */
+    padding-left: 30px; /* Add a subtle left indent on hover */
+  }
+  
+  /* Close button styling */
+  .close-btn {
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+  }
+  .close-btn:hover {
+    transform: rotate(90deg); 
+  }
+  
+  /* Menu toggle */
+  .menu-toggle {
+    position: relative;
+    padding-left: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  .sidebar--webkit-scrollbar {
+    display: none;
+  }
+  .sidebar::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+  .close-btn {
+    align-self: flex-end;
+    font-size: 16px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+  }
+  .content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 50px;
+  }
+  .open-sidebar {
+    left: 0;
+  }

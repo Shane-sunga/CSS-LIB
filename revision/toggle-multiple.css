@@ -1,0 +1,215 @@
+.container {
+  margin: 5px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+.style-exp {
+  background-color: white;
+  border: #b6b4b4 1px dashed;
+  border-radius: 10px;
+  width: 90%;
+  padding: 10px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fcfcfc;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+}
+.form-cont {
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0.4rem;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+/*toggle switch*/
+.toggleSwitch {
+  position: relative;
+  width: 92px;
+  height: 48px;
+  background-color: #d9d9d9;
+  border-radius: 40px;
+  cursor: pointer;
+  text-align: right;
+  line-height: 44px;
+  font-family: "Poppins", serif;
+  font-weight: bold;
+  color: white;
+  user-select: none;
+  transition: background-color 0.4s;
+  border: white 2px solid;
+}
+.toggleSwitch .toggleText {
+  margin-right: 12px;
+}
+.sepdate-cont {
+  display: flex;
+  gap: 5px;
+}
+.toggle-cont {
+  display: flex;
+  flex: auto;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.toggleSwitch .slide {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 32px;
+  height: 32px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s;
+  box-shadow: 0 4.5px 14px -4px #686868;
+}
+.radio-input-off,
+.radio-input-on {
+  display: none;
+}
+.toggleSwitch.on .toggleText {
+  margin-left: 10px;
+  font-family: "Poppins", serif;
+}
+.toggleSwitch.on {
+  background-color: #1b313e;
+  text-align: left;
+  transform: 0.8s;
+  padding-right: 0;
+  padding-left: 1px;
+}
+.toggleSwitch.on .slide {
+  transform: translateX(44px);
+}
+/* Medium Toggle Button */
+.medium-toggleSwitch {
+  position: relative;
+  width: 68px;
+  height: 36px;
+  background-color: #d9d9d9;
+  border-radius: 40px;
+  cursor: pointer;
+  text-align: right;
+  line-height: 31px;
+  font-family: "Poppins", serif;
+  font-weight: bold;
+  color: white;
+  user-select: none;
+  border: white 2px solid;
+  transition: background-color 0.4s;
+}
+.medium-toggleSwitch .medium-toggleText {
+  margin-right: 8px;
+  font-size: 13px;
+}
+.medium-toggleSwitch .slide {
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s;
+  box-shadow: 0 4.5px 14px -4px #686868;
+}
+.medium-toggleSwitch.on .medium-toggleText {
+  margin-left: 8px;
+  font-family: "Poppins", serif;
+}
+.medium-radio-input-off,
+.medium-radio-input-on {
+  display: none;
+}
+.medium-toggleSwitch.on {
+  background-color: #1b313e;
+  text-align: left;
+  transform: 0.8s;
+  padding-right: 0;
+  padding-left: 1px;
+}
+
+.medium-toggleSwitch.on .slide {
+  transform: translateX(31px);
+}
+
+/* Small Toggle Button */
+
+.small-toggleSwitch {
+  position: relative;
+  padding: 0;
+  width: 48px;
+  height: 26px;
+  background-color: #d9d9d9;
+  border-radius: 40px;
+  cursor: pointer;
+  text-align: right;
+  line-height: 18px;
+  font-family: "Poppins", serif;
+  font-weight: bold;
+  color: white;
+  user-select: none;
+  border: white 2px solid;
+  transition: background-color 0.4s;
+}
+
+.small-toggleSwitch .small-toggleText {
+  margin-right: 6px;
+  font-size: 8px;
+}
+
+.small-toggleSwitch .slide {
+  position: absolute;
+  top: 3.5px;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s;
+  box-shadow: 0 4.5px 14px -4px #686868;
+}
+
+.small-toggleSwitch.on .small-toggleText {
+  margin-left: 7px;
+  font-family: "Poppins", serif;
+}
+
+.small-radio-input-off,
+.small-radio-input-on {
+  display: none;
+}
+
+.small-toggleSwitch.on {
+  background-color: #1b313e;
+  text-align: left;
+  transform: 0.8s;
+  padding-right: 0;
+}
+
+.small-toggleSwitch.on .slide {
+  transform: translateX(21px);
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  .border-radio-button {
+    height: 100px;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  .border-radio-button {
+    height: 80px;
+  }
+}

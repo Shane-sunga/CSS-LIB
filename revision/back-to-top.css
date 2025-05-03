@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+.back-to-top-exp {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  width: 140px;
+  gap: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  transition: opacity 0.4s ease, background-color 0.3s ease;
+}
+.back-to-top-exp .bi-chevron-double-up {
+  font-size: 20px;
+  color: black;
+  transition: color 0.3s ease;
+}
+.back-to-top-exp:hover {
+  background: linear-gradient(to right, #0061ff, #60efff);
+}
+.back-to-top-exp:hover .bi-chevron-double-up,
+.back-to-top-exp:hover span {
+  color: #ffffff;
+}
+.back-to-top-exp.animate {
+  animation: bounceDownFade 1.2s ease forwards;
+}
+.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  width: 140px;
+  gap: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  transition: opacity 0.4s ease, background-color 0.3s ease;
+}
+.back-to-top span {
+  font-weight: 800;
+  color: black;
+  transition: color 0.3s ease;
+}
+.back-to-top .bi-chevron-double-up {
+  font-size: 20px;
+  color: black;
+  transition: color 0.3s ease;
+}
+.back-to-top:hover {
+  background: linear-gradient(to right, #0061ff, #60efff);
+}
+.back-to-top:hover .bi-chevron-double-up,
+.back-to-top:hover span {
+  color: #ffffff;
+}
+.back-to-top.animate {
+  animation: bounceDownFade 1.2s ease forwards;
+}
+@keyframes bounceDownFade {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+/*Added styles for the back-to-top button*/
+.class-section-demo1 {
+  height: 100vh;
+  background-color: purple;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.class-section-demo2 {
+  height: 200vh;
+  background-color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.class-section-demo3 {
+  height: 100vh;
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

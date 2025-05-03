@@ -28,3 +28,5 @@ const scripts = [
     "radio-toggle", "textarea", "alerts", "button", "navbar", "container"];
 
 scripts.forEach(script => loadScript(script));
+
+

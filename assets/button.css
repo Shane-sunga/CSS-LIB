@@ -1,47 +1,44 @@
-
-
-  .loading-btn {
-    width: 100%;
-    height: 45px;
-    background-color: #1b313e;
-    color: white;
-    border-radius: 14px;
-    padding: 12px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+.loading-btn {
+  width: 100%;
+  height: 45px;
+  background-color: #1b313e;
+  color: white;
+  border-radius: 14px;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .loading-btn:hover {
-    background-color: #66a3c9;
+  background-color: #66a3c9;
 }
 
 .loading-spinner {
-    display: none;
-    width: 16px;
-    height: 16px;
-    border: 3px solid white;
-    border-top: 3px solid transparent;
-    border-radius: 50%;
-    animation: spin 1.6s linear infinite; /* Rotates every 0.6s */
+  display: none;
+  width: 16px;
+  height: 16px;
+  border: 3px solid white;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 1.6s linear infinite; /* Rotates every 0.6s */
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-
-.copyButton{
+.copyButton {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -50,193 +47,230 @@
   gap: 10px;
 }
 
-      /* Container */
-      .step-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 80%;
-        max-width: 600px;
-        margin: 50px auto;
-        position: relative;
-    }
+/* Container */
+.step-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  max-width: 600px;
+  margin: 50px auto;
+  position: relative;
+}
 
-    /* Progress Bar Background */
-    .progress-step-bar {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 100%;
-        height: 5px;
-        background: #e0e0e0;
-        z-index: -1;
-        transform: translateY(-50%);
-    }
+/* Progress Bar Background */
+.progress-step-bar {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #e0e0e0;
+  z-index: -1;
+  transform: translateY(-50%);
+}
 
-    /* Dynamic Progress Fill */
-    .progress-step-fill {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 0%;
-        height: 5px;
-        background:#6CA0D1;
-        transition: width 0.4s ease-in-out;
-        transform: translateY(-50%);
-    }
+/* Dynamic Progress Fill */
+.progress-step-fill {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0%;
+  height: 5px;
+  background: #6ca0d1;
+  transition: width 0.4s ease-in-out;
+  transform: translateY(-50%);
+}
 
-    /* Step Circles */
-    .step-num {
-        width: 40px;
-        height: 40px;
-        background: #e0e0e0;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        color: #555;
-        position: relative;
-        cursor: pointer;
-        transition: 0.3s;
-    }
+/* Step Circles */
+.step-num {
+  width: 40px;
+  height: 40px;
+  background: #e0e0e0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #555;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    /* Active Step */
-    .step-num.active {
-        background: #1D3C5E;
-        color: white;
-    }
+/* Active Step */
+.step-num.active {
+  background: #1d3c5e;
+  color: white;
+}
 
-    /* Step Text */
-    .step-text {
-        position: absolute;
-        top: 50px;
-        font-size: 14px;
-        color: #555;
-        width: 80px;
-        text-align: center;
-    }
+/* Step Text */
+.step-text {
+  position: absolute;
+  top: 50px;
+  font-size: 14px;
+  color: #555;
+  width: 80px;
+  text-align: center;
+}
 
-    /* Buttons */
-    .btn-cont {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
+/* Buttons */
+.btn-cont {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
 
-    .prev-step-btn,
-    .next-step-btn {
-        margin: 10px;
-        padding: 10px 20px;
-        background: #1D3C5E;
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 12px;
-    }
+.prev-step-btn,
+.next-step-btn {
+  margin: 10px;
+  padding: 10px 20px;
+  background: #1d3c5e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+}
 
-    .prev-step-btn:disabled,
-    .next-step-btn:disabled {
-        background: #ccc;
-        cursor: not-allowed;
-    }
+.prev-step-btn:disabled,
+.next-step-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
 
+.back-to-top-exp,
+.button-back-to-section-exp {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  width: 140px;
+  gap: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  transition: opacity 0.4s ease, background-color 0.3s ease;
+}
 
-    .back-to-top-exp{
-        border: none;
-        outline: none;
-        cursor: pointer;
-        padding: 8px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-        width: 140px;
-        gap: 10px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        transition: opacity 0.4s ease, background-color 0.3s ease;
-      }
+.back-to-top-exp .bi-chevron-double-up,
+.button-back-to-section-exp .bi-chevron-double-up {
+  font-size: 20px;
+  color: black;
+  transition: color 0.3s ease;
+}
 
-      .back-to-top-exp .bi-chevron-double-up {
-        font-size: 20px;
-        color: black;
-        transition: color 0.3s ease;
-      }
+.back-to-top-exp:hover,
+.button-back-to-section-exp:hover {
+  background: linear-gradient(to right, #0061ff, #60efff);
+}
 
-      .back-to-top-exp:hover {
-        background: linear-gradient(to right, #0061ff, #60efff);
+.back-to-top-exp:hover .bi-chevron-double-up,
+.back-to-top-exp:hover span,
+.button-back-to-section-exp:hover .bi-chevron-double-up,
+.button-back-to-section-exp:hover span {
+  color: #ffffff;
+}
 
-      }
+.back-to-top-exp.animate,
+.button-back-to-section-exp.animate {
+  animation: bounceDownFade 1.2s ease forwards;
+}
 
-      .back-to-top-exp:hover .bi-chevron-double-up ,
-      .back-to-top-exp:hover span{
-        color: #ffffff;
-      }
-
-      .back-to-top-exp.animate {
-        animation: bounceDownFade 1.2s ease forwards;
-      }
-
-
-    .back-to-top {
-        display: none;
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 9999;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        padding: 8px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-        width: 140px;
-        gap: 10px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        transition: opacity 0.4s ease, background-color 0.3s ease;
-      }
-
-      .back-to-top .bi-chevron-double-up {
-        font-size: 20px;
-        color: black;
-        transition: color 0.3s ease;
-      }
-
-      .back-to-top:hover {
-        background: linear-gradient(to right, #0061ff, #60efff);
-
-      }
-
-      .back-to-top:hover .bi-chevron-double-up ,
-      .back-to-top:hover span{
-        color: #ffffff;
-      }
-
-      .back-to-top.animate {
-        animation: bounceDownFade 1.2s ease forwards;
-      }
-
-      @keyframes bounceDownFade {
-        0% {
-          transform: translateY(0);
-          opacity: 1;
-        }
-        30% {
-          transform: translateY(-20px);
-          opacity: 1;
-        }
-        70% {
-          transform: translateY(0);
-          opacity: 1;
-        }
-        100% {
-          transform: translateY(0);
-          opacity: 0;
-        }
-      }
+.back-to-top,
+.button-back-to-section {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  width: 140px;
+  gap: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  transition: opacity 0.4s ease, background-color 0.3s ease;
+}
+.back-to-top span,
+.button-back-to-section span {
+  font-weight: 800;
+  color: black;
+  transition: color 0.3s ease;
+}
+.back-to-top .bi-chevron-double-up,
+.button-back-to-section .bi-chevron-double-up {
+  font-size: 20px;
+  color: black;
+  transition: color 0.3s ease;
+}
+.back-to-top:hover,
+.button-back-to-section {
+  background: linear-gradient(to right, #0061ff, #60efff);
+}
+.back-to-top:hover .bi-chevron-double-up,
+.back-to-top:hover span,
+.button-back-to-section:hover .bi-chevron-double-up,
+.button-back-to-section:hover span {
+  color: #ffffff;
+}
+.back-to-top.animate,
+.button-back-to-section.animate {
+  animation: bounceDownFade 1.2s ease forwards;
+}
+@keyframes bounceDownFade {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+/*Added styles for the back-to-top button*/
+.class-section-demo1 {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: purple;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.class-section-demo2 {
+  margin: 0;
+  padding: 0;
+  height: 200vh;
+  background-color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.class-section-demo3 {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

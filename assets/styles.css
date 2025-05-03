@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+ @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 @import url("cards.css");
 @import url("button.css");
 @import url("loading.css");
-@import url("navbar.css");
+@import url("navbar.css");                                                                                                                         
 @import url("container.css");
 @import url("examples/exp-navbar.css");
 @import url("textarea.css");
@@ -21,13 +21,6 @@
   font-family: "Poppins";
   box-sizing: border-box;
 }
-
-/* body{
-  background-image: linear-gradient(0deg, #6fdcf5 0%, #ffffff 100%);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-} */
 
 /* Form Style */
 
@@ -805,8 +798,6 @@ font-size: 10px;
   --checkbox-size: 21px;
 }
 
-
-
 .show-pass-text {
   text-align: center;
   justify-content: center;
@@ -1035,99 +1026,6 @@ font-size: 10px;
     width: auto;
   }
 }
-
-
-
-/* Sidebar Style */
-/* Sidebar Styles */
-.sidebar {
-  width: 250px;
-  background-color: #2C3E50; /* Darker color for a more subtle look */
-  color: white;
-  padding: 30px 20px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  gap: 20px;
-  position: fixed;
-  top: 0;
-  left: -250px;
-  height: 100vh;
-  transition: left 0.3s ease-in-out; /* Smooth transition */
-  z-index: 2000;
-}
-
-.sidebar a {
-  color: white;
-  text-decoration: none;
-  padding: 12px 20px;
-  display: block;
-  transition: background-color 0.3s ease, padding-left 0.3s ease;
-  border-radius: 8px;
-}
-
-.sidebar a:hover {
-  background-color: #34495E; /* Slightly lighter background */
-  padding-left: 30px; /* Add a subtle left indent on hover */
-}
-
-/* Close button styling */
-.close-btn {
-  font-size: 20px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  align-self: flex-start; /* Position it at the top-left */
-  margin-bottom: 20px;
-  transition: transform 0.3s ease;
-}
-
-.close-btn:hover {
-  transform: rotate(90deg); /* Small animation on hover */
-}
-
-/* Menu toggle */
-
-.menu-toggle {
-  position: relative;
-  padding-left: 20px;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.sidebar--webkit-scrollbar {
-  display: none;
-}
-
-.sidebar::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
-}
-
-
-.close-btn {
-  align-self: flex-end;
-  font-size: 16px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  color: white;
-}
-
-.content {
-  flex: 1;
-  padding: 20px;
-  margin-left: 50px;
-}
-
-.open-sidebar {
-  left: 0;
-}
-
-
 /* Text Style */
 .header {
   margin: 1rem;

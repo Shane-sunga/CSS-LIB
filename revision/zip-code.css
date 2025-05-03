@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+.form-cont {
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0.4rem;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+.input-cont, .form-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.input-group {
+  flex: 1 1 calc(10% - 10px);
+  margin: 0 1px 0 1px;
+  padding: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #afafaf;
+  border-radius: 14px;
+  box-sizing: border-box;
+  outline-color: #66a3c9;
+  background-color: white;
+  align-content: center;
+  min-height: 50px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+.zipMessage {
+  font-size: 10px;
+  color: gray;
+  margin: 0;
+}
+.zip-input {
+  border: none;
+  min-height: 20px;
+  font-size: 16px;
+  outline: none;
+}
+
+.custom-select {
+  position: relative;
+  max-width: 210px;
+  user-select: none;
+}
+.selected-flag {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #afafaf;
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+}
+.selected-flag img {
+  width: 20px;
+  height: 18px;
+  margin-right: 10px;
+  display: none;
+}
+
+.country-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.country-list {
+  position: absolute;
+  width: 120%;
+  top: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #afafaf;
+  background-color: white;
+  z-index: 1000;
+  display: none;
+  border-radius: 10px;
+  margin-top: 5px;
+  padding: 0;
+}
+
+.country-list li {
+  padding: 10px;
+  display: flex;
+  align-items: start;
+  cursor: pointer;
+}
+
+.country-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.country-list img {
+  width: 25px;
+  height: 18px;
+  margin-right: 10px;
+}
+
+.label-message-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 2px 2px 2px;
+  font-weight: bold;
+}

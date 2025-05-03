@@ -593,10 +593,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
-
-
-
-
 });
 document.addEventListener("DOMContentLoaded", function () {
     const zipInputs = document.querySelectorAll(".zip-input");

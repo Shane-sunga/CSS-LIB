@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 20px 0;
+  font-family: "Poppins";
+}
+
+.table-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-section th,
+.table-section td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.table-section th {
+  background-color: #f2f2f2;
+}
+
+.table-section tr:hover {
+  background-color: #f5f5f5;
+}
+
+.colorlib-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.colorlib-table td:first-child,
+.colorlib-table th:first-child {
+  text-align: center;
+  width: 40px;
+}
+
+.table-btn {
+  padding: 6px 12px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.table-btn.delete:hover {
+  background-color: #cd1e1a;
+}
+
+.table-colorlib-table {
+  min-width: 600px;
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.colorlib-table thead {
+  background-color: #f5f5f5;
+}
+
+.colorlib-table th,
+.colorlib-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  letter-spacing: break-word;
+}
+
+.colorlib-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 12px;
+  color: #000;
+  font-size: 0.9em;
+}
+
+.status.active {
+  background-color: #28a745;
+}
+
+.status.pending {
+  background-color: #ffc107;
+}
+.status-dropdown.default {
+  background-color: #d3d3d3; 
+  color: #000;
+}
+
+.status-dropdown {
+    padding: 5px 10px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 0.85em;
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    text-align: center;
+  }
+  
+  .status-dropdown.active {
+    background-color: #28a745;
+  }
+  
+  .status-dropdown.pending {
+    background-color: #ffc107;
+    color: #000;
+  }
+  
+  .status-dropdown.inactive {
+    background-color: #6c757d;
+  }
+  
+@media (max-width: 691px) {
+  .table-container {
+    overflow-x: auto;
+  }
+
+  .colorlib-table {
+    font-size: 12px;
+    min-width: 600px;
+  }
+
+  .colorlib-table th,
+  .colorlib-table td {
+    padding: 8px 10px;
+    white-space: nowrap;
+  }
+
+  .status {
+    font-size: 0.75em;
+    padding: 3px 8px;
+  }
+
+  .table-btn {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
+/* For tablets and smaller screens */
+@media (max-width: 991px) {
+  .table-container {
+    overflow-x: auto;
+    padding: 0 10px;
+  }
+
+  .colorlib-table {
+    min-width: unset;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .colorlib-table th,
+  .colorlib-table td {
+    white-space: nowrap;
+    padding: 10px 12px;
+  }
+
+  .status-dropdown {
+    font-size: 0.8em;
+    padding: 4px 8px;
+  }
+}
+
+/* For phones */
+@media (max-width: 576px) {
+  .table-container {
+    overflow-x: auto;
+    padding: 0 5px;
+  }
+
+  .colorlib-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .colorlib-table thead {
+    display: none; /* optional: hide headers on very small screens */
+  }
+
+  .colorlib-table tbody tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  }
+
+  .colorlib-table tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .colorlib-table tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    margin-right: 10px;
+  }
+
+  .table-btn {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+
+  .status {
+    font-size: 0.7em;
+    padding: 3px 6px;
+  }
+}
