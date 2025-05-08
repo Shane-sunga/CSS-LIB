@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const countryNameSpan = selectedFlag?.querySelector(".country-name");
   const countryList = document.querySelector(".country-list");
 
+
   if (!zipInput || !zipMessage || !selectedFlag || !flagIcon || !countryNameSpan || !countryList) {
     console.warn("Some ZIP selector elements are missing from the DOM.");
     return;
@@ -257,3 +258,45 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+// Script for table next
+  const form = document.querySelector('.form-main');
+  const formContainer = document.querySelector('.form-container');
+  const confirmationContainer = document.querySelector('.confirmation-container');
+  const editButton = document.querySelector('.edit-button');
+  const finalSubmitButton = document.querySelector('.final-submit-button');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Fill confirmation summary fields
+    document.getElementById('conf-firstName').textContent = form.firstName.value;
+    document.getElementById('conf-middleName').textContent = form.middleName.value;
+    document.getElementById('conf-middleInitial').textContent = form.middleInitial.value;
+    document.getElementById('conf-lastName').textContent = form.lastName.value;
+    document.getElementById('conf-sex').textContent = form.sex.value;
+    document.getElementById('conf-number').textContent = form.number.value;
+    document.getElementById('conf-zipCode').textContent = form.zipCode.value;
+    document.getElementById('conf-date').textContent = form.date.value;
+    document.getElementById('conf-contactNumber').textContent = form.contactNumber.value;
+    document.getElementById('conf-decimal').textContent = form.decimal.value;
+    document.getElementById('conf-email').textContent = form.email.value;
+
+    const selectedRadio = form.querySelector('input[name="form-radio-group"]:checked');
+    document.getElementById('conf-radio').textContent = selectedRadio ? selectedRadio.value : 'None';
+
+    // Show confirmation, hide form
+    formContainer.style.display = 'none';
+    confirmationContainer.style.display = 'block';
+  });
+
+  // Go back to the form
+  editButton.addEventListener('click', () => {
+    formContainer.style.display = 'block';
+    confirmationContainer.style.display = 'none';
+  });
+
+  // Final submit and refresh
+  finalSubmitButton.addEventListener('click', () => {
+    alert('Form submitted successfully!');
+    location.reload(); // Refreshes the page
+  });

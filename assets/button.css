@@ -1,3 +1,43 @@
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+}
+
+.pagination button {
+  background: #1d3c5e;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.pagination button:hover:not(.active) {
+  background-color: #66a3c9;
+}
+
+.pagination button.active {
+  background-color: #66a3c9;
+  font-weight: bold;
+}
+
+.pagination .ellipsis {
+  padding: 6px 10px;
+  color: #555;
+  font-weight: bold;
+}
+/*end of added style*/
+
 .loading-btn {
   width: 100%;
   height: 45px;
@@ -48,7 +88,7 @@
 }
 
 /* Container */
-.step-container {
+.step-container , .step-container-cardsliding {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,7 +99,7 @@
 }
 
 /* Progress Bar Background */
-.progress-step-bar {
+.progress-step-bar, .progress-step-bar-cardsliding {
   position: absolute;
   top: 50%;
   left: 0;
@@ -71,7 +111,7 @@
 }
 
 /* Dynamic Progress Fill */
-.progress-step-fill {
+.progress-step-fill, .progress-step-fill-cardsliding {
   position: absolute;
   top: 50%;
   left: 0;
@@ -83,7 +123,7 @@
 }
 
 /* Step Circles */
-.step-num {
+.step-num, .step-num-cardsliding {
   width: 40px;
   height: 40px;
   background: #e0e0e0;
@@ -99,13 +139,13 @@
 }
 
 /* Active Step */
-.step-num.active {
+.step-num.active, .step-num-cardsliding.active {  
   background: #1d3c5e;
   color: white;
 }
 
 /* Step Text */
-.step-text {
+.step-text, .step-text-cardsliding {
   position: absolute;
   top: 50px;
   font-size: 14px;
@@ -121,8 +161,8 @@
   margin-top: 20px;
 }
 
-.prev-step-btn,
-.next-step-btn {
+.prev-step-btn, .prev-step-btn-cardsliding,
+.next-step-btn, .next-step-btn-cardsliding {
   margin: 10px;
   padding: 10px 20px;
   background: #1d3c5e;
@@ -131,11 +171,51 @@
   cursor: pointer;
   border-radius: 12px;
 }
+.search-icon-btn{
+  max-width: 40px;
+  min-width: 10px;
+}
+
+.search-group {
+  display: flex;
+  align-items: center;
+}
+
+.search-group input {
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
 
 .prev-step-btn:disabled,
-.next-step-btn:disabled {
+.next-step-btn:disabled, .prev-step-btn-cardsliding:disabled,
+.next-step-btn-cardsliding:disabled  {
   background: #ccc;
   cursor: not-allowed;
+}
+/*added style for pagination with cardsliding*/
+.cards-carousel-cardsliding {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  margin: 30px auto;
+  position: relative;
+}
+
+.card-cardsliding {
+  flex: 0 0 100%;
+  max-width: 100%;
+  height: 250px;
+  transition: transform 0.4s ease-in-out;
+  padding: 30px;
+  background: orangered;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .back-to-top-exp,

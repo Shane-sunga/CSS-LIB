@@ -65,11 +65,16 @@ const data = [];
     }
 
     if (endPage < pageCount) {
-      if (endPage < pageCount - 1) {
-        const ellipsis = document.createElement("li");
-        ellipsis.textContent = "...";
-        ellipsis.classList.add("disabled");
-        pagination.appendChild(ellipsis);
+      if (endPage < pageCount) {
+        if (endPage < pageCount - 1) {
+          const ellipsis = document.createElement("li");
+          ellipsis.textContent = "...";
+          ellipsis.classList.add("disabled");
+          pagination.appendChild(ellipsis);
+        }
+      
+        // Always show last page number
+        createPage(String(pageCount), pageCount, page === pageCount);
       }
       // Jump input
       const inputLi = document.createElement("li");

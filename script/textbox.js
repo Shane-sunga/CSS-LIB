@@ -498,13 +498,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
     document.querySelector(".form-tb-contNumber").addEventListener("input", function () {
-        this.value = this.value.slice(0, 11);
+        this.value = this.value.slice(0, 10);
     });
 
     // Validate Contact Number (10 digits)
     const contactNumber = document.querySelector(".form-tb-contNumber");
     contactNumber.addEventListener("input", function () {
-        if (!/^\d{11}$/.test(this.value)) {
+        if (!/^\d{10}$/.test(this.value)) {
             this.setCustomValidity("Contact number must be exactly 11 digits.");
         } else {
             this.setCustomValidity("");
@@ -543,6 +543,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Select all phone number inputs
     const phoneInputs = document.querySelectorAll(".form-tb-tel");
+    document.querySelector(".form-tb-tel").addEventListener("input", function () {
+        this.value = this.value.slice(0, 10);
+    });
 
     if (phoneInputs.length > 0) {
         phoneInputs.forEach((phoneInput) => {

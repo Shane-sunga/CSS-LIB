@@ -1,0 +1,270 @@
+ @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+      * {
+        font-family: "Poppins", sans-serif;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .radio-cont {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 10px;
+        overflow-x: auto;
+        padding: 5px;
+        margin-top: 5px;
+        white-space: nowrap;
+      }
+
+      .radio-cont input[type="radio"] {
+        flex-shrink: 0;
+      }
+
+      .radio-cont .radio-label {
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
+        gap: 5px;
+        white-space: nowrap;
+      }
+
+      .input-label,
+      .input-cb-label {
+        font-size: 14px;
+        font-weight: bold;
+        margin-left: 8px;
+        margin-bottom: 0;
+        text-transform: uppercase;
+      }
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        min-height: 100vh;
+        background-color: #fcfcfc;
+        padding: 4%;
+      }
+
+      .form-cont {
+        display: flex;
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0.4rem;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .input-cont,
+      .input-other-cont,
+      .input-file-list-cont {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-tb-text,
+      .form-tb-middleName,
+      .form-tb-middleInitial,
+      .form-tb-lastName,
+      .form-tb-select,
+      .form-tb-number,
+      .form-tb-zipCode,
+      .form-tb-date,
+      .form-tb-contNumber,
+      .form-tb-deci,
+      .form-tb-email,
+      .form-tb-password,
+      .form-tb-confirm-password {
+        flex: 1 1 calc(20% - 10px);
+        margin: 0 5px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #afafaf;
+        border-radius: 14px;
+        outline-color: #66a3c9;
+        background-color: white;
+        min-height: 50px;
+      }
+      /*added*/
+      .next-button {
+        height: 45px;
+        background-color: #1b313e;
+        color: white;
+        border-radius: 14px;
+        padding: 12px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+        margin-top: 10px;
+        width: 100%;
+      }
+
+      .buttons-row .next-button {
+        width: 100%;
+        flex: 1;
+      }
+
+      .confirmation-form input {
+        background-color: #eee;
+        color: #333;
+        pointer-events: none;
+        border: 1px solid #ccc;
+      }
+
+      .title-Label {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 4%;
+      }
+
+      .buttons-row {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .form-container {
+        display: block;
+      }
+
+      .confirmation-container {
+        display: none;
+        overflow-x: hidden;
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      .form-cont.buttons-row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .form-cont.buttons-row .next-button {
+        flex: 1 1 48%;
+      }
+
+      .confirmation-form {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-left: 40px;
+        margin-right: 40px;
+        word-break:break-all;
+      }
+
+      .confirmation-form .form-cont {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-between;
+      }
+
+      .confirmation-form .input-cont {
+        flex: 1 1 calc(20% - 10px);
+        min-width: 200px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      @media (max-width: 768px) {
+        .confirmation-form .input-cont {
+          flex: 1 1 100%;
+        }
+      }
+
+      .form-tb-text,
+      .form-tb-middleName,
+      .form-tb-middleInitial,
+      .form-tb-lastName,
+      .form-tb-select,
+      .form-tb-number,
+      .form-tb-zipCode,
+      .form-tb-date,
+      .form-tb-contNumber,
+      .form-tb-deci,
+      .form-tb-email,
+      .form-tb-password,
+      .form-tb-confirm-password {
+        flex: 1 1 100%;
+        margin-bottom: 10px;
+        padding: 12px;
+      }
+      .confirmation-form p {
+        font-size: 16px;
+        margin: 10px 0;
+        line-height: 1.5;
+      }
+      .confirmation-title {
+        font-size: 26px;
+        font-weight: 600;
+        text-align: center;
+        margin: 30px 0 20px;
+        color: #1b313e;
+      }
+      
+      .confirmation-card {
+        background-color: #ffffff;
+        border: 1px solid #dedede;
+        border-radius: 16px;
+        padding: 30px;
+        min-width: 800px;          
+        max-width: 100%;            
+        margin: 0 auto;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        word-break: break-word;
+      }
+      @media (max-width: 540px) {
+        .confirmation-card {
+          min-width: 100%; 
+          padding: 20px;
+        }
+      }
+      
+      
+      .confirmation-item {
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        color: #333;
+        border-bottom: 1px solid #f0f0f0;
+        padding-bottom: 6px;
+        word-break: break-word; /* breaks long words */
+        flex-wrap: wrap;         /* allows wrapping */
+        gap: 5px;                /* optional: adds spacing when wrapped */
+      }
+      
+      .confirmation-item span,
+      .confirmation-item strong {
+        max-width: 100%;
+        overflow-wrap: break-word;
+        word-break: break-word;
+      }
+      
+      
+      @media (max-width: 600px) {
+        .confirmation-item {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      
+        .confirmation-item strong {
+          margin-top: 4px;
+        }
+      
+        .confirmation-card {
+          padding: 20px;
+        }
+      }
+      

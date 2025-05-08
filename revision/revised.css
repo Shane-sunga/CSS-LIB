@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f8fa;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.confirmation-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1b313e;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.confirmation-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.confirmation-item {
+  flex: 1 1 45%;
+  background: #f0f4f8;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.confirmation-item label {
+  font-weight: 600;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.confirmation-item span {
+  color: #222;
+  font-size: 16px;
+}
+
+.buttons-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.button {
+  background-color: #1b313e;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background-color: #254859;
+}
