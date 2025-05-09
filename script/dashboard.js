@@ -11,12 +11,46 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeAddModal = document.querySelector(".close-add-event-modal");
   const calendar = document.querySelector(".calendar");
   const eventMessage = document.querySelector(".event-message");
-  const addEventForm = document.getElementById("add-event-form");
-  const newEventInput = document.getElementById("new-event-text");
+  const addEventForm = document.querySelector(".add-event-form");
+  const newEventInput = document.querySelector(".new-event-text");
+  const newEventTimeInput = document.querySelector(".new-event-time");
 
-  let date = new Date();
+let date = new Date();
   const events = {};
   let selectedDate = "";
+
+  function renderEvents() {
+    const event = events[selectedDate];
+    if (event && event.length > 0) {
+      eventMessage.innerHTML = event
+        .map(
+          (e, i) => `
+          <div>
+            ${i + 1}. ${e}
+            <button data-index="${i}" class="delete-single-event" style="color:red; margin-left:5px;">🗑</button>
+          </div>
+        `
+        )
+        .join("");
+    } else {
+      eventMessage.innerHTML = "No events yet for this day.";
+    }
+
+    setTimeout(() => {
+      document.querySelectorAll(".delete-single-event").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const index = parseInt(btn.getAttribute("data-index"));
+          events[selectedDate].splice(index, 1);
+          if (events[selectedDate].length === 0) {
+            delete events[selectedDate];
+          }
+          modal.classList.remove("show");
+          calendar.classList.remove("modal-open");
+          renderCalendar();
+        });
+      });
+    }, 0);
+  }
 
   function renderCalendar() {
     const year = date.getFullYear();
@@ -24,7 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const firstDay = new Date(year, month, 1).getDay();
     const lastDate = new Date(year, month + 1, 0).getDate();
     const today = new Date();
-
     const monthNames = [
       "January",
       "February",
@@ -45,12 +78,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const fragment = document.createDocumentFragment();
 
-    // Empty slots before first day
     Array.from({ length: firstDay }).forEach(() => {
       fragment.appendChild(document.createElement("div"));
     });
 
-    // Days of the month
     Array.from({ length: lastDate }).forEach((_, i) => {
       const day = i + 1;
       const isToday =
@@ -62,10 +93,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const span = document.createElement("span");
       span.textContent = day;
 
-      // Add indicator if there are events on this date
       const fullDate = `${year}-${String(month + 1).padStart(2, "0")}-${String(
         day
       ).padStart(2, "0")}`;
+
       if (events[fullDate] && events[fullDate].length > 0) {
         const dot = document.createElement("div");
         dot.classList.add("event-dot");
@@ -76,29 +107,12 @@ document.addEventListener("DOMContentLoaded", function () {
         span.classList.add("today");
       }
 
-      span.addEventListener("click", () => {
-        selectedDate = `${year}-${String(month + 1).padStart(2, "0")}-${String(
-          day
-        ).padStart(2, "0")}`;
+       span.addEventListener("click", () => {
+        selectedDate = fullDate;
         modalTitle.textContent = `Events on ${monthNames[month]} ${day}, ${year}`;
 
-        const event = events[selectedDate];
-        if (event && event.length > 0) {
-          eventMessage.innerHTML = event
-            .map(
-              (e, i) => `
-            <div>
-              ${i + 1}. ${e}
-              <button data-index="${i}" class="delete-single-event" style="color:red; margin-left:5px;">🗑</button>
-            </div>
-          `
-            )
-            .join("");
-        } else {
-          eventMessage.innerHTML = "No events yet for this day.";
-        }
+        renderEvents();
 
-        // Add Event button
         if (!document.getElementById("add-event-btn")) {
           const addBtn = document.createElement("button");
           addBtn.id = "add-event-btn";
@@ -110,34 +124,18 @@ document.addEventListener("DOMContentLoaded", function () {
             addModal.classList.add("show");
             addModalTitle.textContent = selectedDate;
             newEventInput.value = "";
+            newEventTimeInput.value = "";
           });
         }
 
         modal.classList.add("show");
         calendar.classList.add("modal-open");
-
-        // Allow deletion of individual events
-        setTimeout(() => {
-          document.querySelectorAll(".delete-single-event").forEach((btn) => {
-            btn.addEventListener("click", () => {
-              const index = parseInt(btn.getAttribute("data-index"));
-              events[selectedDate].splice(index, 1);
-              if (events[selectedDate].length === 0) {
-                delete events[selectedDate];
-              }
-              modal.classList.remove("show");
-              calendar.classList.remove("modal-open");
-              renderCalendar(); // Re-render after deletion
-            });
-          });
-        }, 0);
       });
 
       dayEl.appendChild(span);
       fragment.appendChild(dayEl);
     });
 
-    // Empty slots after last day
     const totalCells = firstDay + lastDate;
     Array.from({ length: 42 - totalCells }).forEach(() => {
       fragment.appendChild(document.createElement("div"));
@@ -146,7 +144,6 @@ document.addEventListener("DOMContentLoaded", function () {
     calendarDates.appendChild(fragment);
   }
 
-  // Navigation buttons
   prevBtn.addEventListener("click", () => {
     date.setMonth(date.getMonth() - 1);
     renderCalendar();
@@ -157,7 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
     renderCalendar();
   });
 
-  // Close modals
   closeModal.addEventListener("click", () => {
     modal.classList.remove("show");
     calendar.classList.remove("modal-open");
@@ -169,15 +165,16 @@ document.addEventListener("DOMContentLoaded", function () {
     addModal.classList.remove("show");
   });
 
-  // Submit new event
   addEventForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const newEvent = newEventInput.value.trim();
-    if (newEvent) {
+    const newEventText = newEventInput.value.trim();
+    const newEventTime = newEventTimeInput.value.trim();
+
+    if (newEventText && newEventTime) {
       if (!events[selectedDate]) {
         events[selectedDate] = [];
       }
-      events[selectedDate].push(newEvent);
+      events[selectedDate].push(`${newEventTime} - ${newEventText}`);
       addModal.classList.remove("show");
       modal.classList.remove("show");
       calendar.classList.remove("modal-open");
@@ -185,7 +182,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Initial render
   renderCalendar();
 });
 
